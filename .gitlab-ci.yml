@@ -1,0 +1,69 @@
+image: node:10.15.3-jessie
+before_script:
+  ##
+  ## Install ssh-agent if not already installed, it is required by Docker.
+  ## (change apt-get to yum if you use an RPM-based image)
+  ##
+  - apt-get update -y
+  - apt-get install rsync -y
+  - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
+
+  ##
+  ## Run ssh-agent (inside the build environment)
+  ##
+  - eval $(ssh-agent -s)
+
+  ##
+  ## Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+  ## We're using tr to fix line endings which makes ed25519 keys work
+  ## without extra base64 encoding.
+  ## https://gitlab.com/gitlab-examples/ssh-private-key/issues/1#note_48526556
+  ##
+  - echo "$STAGING_SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+
+  ##
+  ## Create the SSH directory and give it the right permissions
+  ##
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan staging.kloudi.tech >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+  ##
+  ## Optionally, if you will be using any Git commands, set the user name and
+  ## and email.
+  ##
+  #- git config --global user.email "user@example.com"
+  #- git config --global user.name "User name"
+
+stages:
+  - staging
+  - production
+
+staging:
+  type: deploy
+  stage: staging
+  only:
+    - dev
+  script:
+    - npm install
+    - export TARGET_ENV=staging
+    - export GATSBY_API_URL=https://api-staging.kloudi.tech
+    - export PLATFORM=WEB
+    - npm run build
+    - ssh-add <(echo "$STAGING_SSH_KEY")
+    - rsync -a public/ ubuntu@staging.kloudi.tech:~/deploy/dist/ --delete
+
+production:
+  type: deploy
+  stage: production
+  only:
+    - master
+  script:
+    - npm install
+    - export TARGET_ENV=production
+    - export GATSBY_API_URL=https://api.kloudi.tech
+    - export PLATFORM=WEB
+    - npm run build
+    - npm install -g firebase-tools
+    - firebase deploy --token "$FIREBASE_TOKEN" --only hosting:kloudteam-homepage

@@ -1,0 +1,167 @@
+@import './common/bootstrap-essentials';
+@import './common/mixins';
+@import './common/variables';
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('../fonts/AvenirNext-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('../fonts/AvenirNext-DemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('../fonts/AvenirNext-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('../fonts/AvenirNext-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('../fonts/AvenirNext-UltraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTExtraBold.otf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTExtraBoldOblique.otf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTBold.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTBoldOblique.otf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTDemi.otf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTDemiOblique.otf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTMedium.otf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTMediumOblique.otf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTBook.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTBookOblique.otf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTLight.otf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../fonts/futura/FuturaPTLightOblique.otf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: AvenirNext;
+  font-weight: 400;
+  color: $primary-text-color;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-text-color;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+one-col-margin {
+  @include make-col-ready();
+  @include media-breakpoint-up(sm) {
+    @include make-col(1);
+  }
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

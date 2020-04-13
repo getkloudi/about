@@ -1,0 +1,227 @@
+@mixin clear-margin {
+  margin: 0px;
+}
+
+@mixin clear-padding {
+  padding: 0px;
+}
+
+@mixin clear {
+  @include clear-margin();
+  @include clear-padding();
+}
+
+@mixin hexagon-background-left-diagonal {
+  background-image: url('../images/top-left-bg.svg'),
+    url('../images/bottom-right-bg.svg');
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+
+  @media only screen and (min-width: 0px) {
+    background-size: 80%, 80%;
+  }
+  @media only screen and (min-width: 480px) {
+    background-size: 60%, 60%;
+  }
+  @media only screen and (min-width: 960px) {
+    background-size: 40%, 40%;
+  }
+}
+
+@mixin hexagon-background {
+  @media only screen and (min-width: 0px) {
+    background-image: url('../images/top-left-bg.svg'),
+      url('../images/bottom-right-bg.svg');
+    background-position: left top, right bottom;
+    background-size: 80%, 80%;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  @media only screen and (min-width: 480px) {
+    background-image: url('../images/top-left-bg.svg'),
+      url('../images/bottom-right-bg.svg');
+    background-position: left top, right bottom;
+    background-size: 60%, 60%;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  @media only screen and (min-width: 960px) {
+    background-image: url('../images/top-left-bg.svg'),
+      url('../images/top-right-bg.svg'), url('../images/bottom-right-bg.svg'),
+      url('../images/bottom-left-bg.svg');
+    background-position: left top, right top, right bottom, left bottom;
+    background-size: 40%, 40%, 40%, 40%;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  }
+}
+
+@mixin hexagon-background-for-components {
+  @media only screen and (min-width: 0px) {
+    background-image: url('../../images/top-left-bg.svg'),
+      url('../../images/bottom-right-bg.svg');
+    background-position: left top, right bottom;
+    background-size: 80%, 80%;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  @media only screen and (min-width: 480px) {
+    background-image: url('../../images/top-left-bg.svg'),
+      url('../../images/bottom-right-bg.svg');
+    background-position: left top, right bottom;
+    background-size: 60%, 60%;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  @media only screen and (min-width: 960px) {
+    background-image: url('../../images/top-left-bg.svg'),
+      url('../../images/top-right-bg.svg'),
+      url('../../images/bottom-right-bg.svg'),
+      url('../../images/bottom-left-bg.svg');
+    background-position: left top, right top, right bottom, left bottom;
+    background-size: 40%, 40%, 40%, 40%;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-column;
+  align-items: center;
+}
+
+@mixin flex-column-justify-center {
+  @include flex-column;
+  justify-content: center;
+}
+
+@mixin flex-reverse-column {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@mixin flex-reverse-column-center {
+  @include flex-reverse-column;
+  align-items: center;
+}
+
+@mixin flex-row-center {
+  @include flex-row;
+  align-items: center;
+}
+
+@mixin flex-row-justify-center {
+  @include flex-row;
+  justify-content: center;
+}
+
+@mixin flex-reverse-row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@mixin flex-reverse-row-center {
+  @include flex-reverse-row;
+  align-items: center;
+}
+
+@mixin grey-border {
+  border: 1px solid #e4e5ec;
+  border-radius: 8px;
+}
+
+@mixin white-blur {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+@mixin form-input {
+  border-radius: 8px;
+  box-shadow: 0 6px 10px 0 rgba(69, 73, 91, 0.08);
+  background-color: #ffffff;
+  border: solid 1px #e4e5ec;
+}
+
+@mixin kloudi-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+
+@mixin kloudi-showcase-bg-blur {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75) 50%,
+    #000000
+  );
+}
+
+@mixin form-input-wrapper-bg {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: solid 1px #e4e5ec;
+  box-shadow: 0 2px 4px 0 rgba(69, 73, 91, 0.5);
+}
+
+@mixin form-input-wrapper-bg-hover {
+  box-shadow: 0 1px 2px 0 rgba(69, 73, 91, 0.25);
+}
+
+@mixin plan-icon {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+}
+
+@mixin plan-name {
+  font-family: 'AvenirNext';
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  color: $primary-text-color;
+  text-decoration: underline;
+}
+
+@mixin plan-pricing {
+  font-family: 'Futura';
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  color: $primary-text-color;
+}
+
+@mixin plan-features {
+  @include flex-column-center;
+  justify-content: center;
+  .text {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-stretch: normal;
+    color: $secondary-text-color;
+    margin: 2px 0;
+  }
+}

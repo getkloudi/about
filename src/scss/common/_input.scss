@@ -1,0 +1,164 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'node_modules/bootstrap/scss/_forms.scss';
+@import './_mixins.scss';
+@import './_variables.scss';
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control {
+  border: none;
+  @include clear();
+  @include flex-row-center();
+  height: 20px;
+  font-family: 'AvenirNext';
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $primary-text-color;
+  border: none;
+  border-bottom: solid 1px #e4e5ec;
+  border-radius: 0px;
+
+  &.is-valid {
+    border: none;
+    border-bottom: solid 1px #11998e;
+
+    &:focus {
+      border: none;
+      border-bottom: solid 1px #11998e;
+      box-shadow: none;
+    }
+  }
+
+  &.is-invalid {
+    border: none;
+    border-bottom: solid 1px #ee5253;
+
+    &:focus {
+      border: none;
+      border-bottom: solid 1px #ee5253;
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin text-input {
+  font-family: 'AvenirNext';
+  line-height: 28px;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #e4e5ec;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 1rem 2rem;
+}
+
+@mixin form-text-input-wrapper {
+  .input-wrapper {
+    @include flex-row-center();
+    @include form-input-wrapper-bg();
+    width: 300px;
+    height: 48px;
+    padding: 0 16px;
+    margin-top: 16px;
+    transition: all 100ms ease-in-out;
+
+    .img {
+      background-color: #e4e5ec;
+      transition: all 100ms ease-in-out;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include form-input-wrapper-bg-hover();
+    }
+
+    &:focus-within {
+      @include form-input-wrapper-bg-hover();
+      .input {
+        border-bottom: solid 1px $secondary-text-color;
+      }
+
+      ::-moz-placeholder {
+        color: transparent;
+      }
+
+      ::placeholder {
+        color: transparent;
+      }
+
+      :-ms-input-placeholder {
+        color: transparent;
+      }
+
+      .img {
+        background-color: $secondary-text-color;
+      }
+    }
+  }
+
+  .focus-shadow {
+    @include form-input-wrapper-bg-hover();
+
+    .input {
+      border-bottom: solid 1px $secondary-text-color;
+    }
+  }
+
+  .first-element {
+    margin-top: 0px;
+  }
+}
+
+@mixin form-text-input {
+  @include form-text-input-wrapper();
+
+  .input {
+    @include clear();
+    @include flex-row-center();
+    height: 20px;
+    font-family: 'AvenirNext';
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $primary-text-color;
+    border: none;
+    border-bottom: solid 1px #e4e5ec;
+    border-radius: 0px;
+  }
+
+  ::-moz-placeholder {
+    color: #9b9b9b;
+    font-family: 'AvenirNext';
+    padding-left: 2px;
+  }
+
+  ::placeholder {
+    color: #9b9b9b;
+    font-family: 'AvenirNext';
+    padding-left: 2px;
+  }
+
+  :-ms-input-placeholder {
+    color: #9b9b9b;
+    font-family: 'AvenirNext';
+    padding-left: 2px;
+  }
+}

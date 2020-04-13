@@ -1,0 +1,150 @@
+@import '../../scss/common/bootstrap-essentials';
+@import '../../scss/common/link';
+@import '../../scss/common/input';
+@import '../../scss/common/variables';
+
+.signup-form {
+  position: relative;
+  @include flex-column-center();
+  min-height: 80%;
+  padding: 32px 0px;
+  margin: 0 auto;
+  .signup-header {
+    @include flex-column-center();
+    position: relative;
+    margin: auto auto 0 auto;
+    .header-logo {
+      width: 64px;
+    }
+    .header-greeting {
+      @include clear();
+      font-family: 'AvenirNext';
+      font-weight: 600;
+      font-size: 24px;
+      color: $heading-text-color;
+      margin-top: 16px;
+    }
+
+    .header-message {
+      @include clear();
+      font-family: 'AvenirNext';
+      font-size: 24px;
+      color: $heading-text-color;
+    }
+    .page-indicator {
+      @include flex-row-center();
+      margin-top: 16px;
+      width: 300px;
+      .text {
+        height: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #9b9b9b;
+      }
+      .dot-indicators {
+        @include flex-row-center();
+        margin-left: auto;
+        .dot {
+          margin-left: 4px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .empty {
+          height: 6px;
+          width: 6px;
+          border: solid 1px #979797;
+        }
+        .solid {
+          height: 8px;
+          width: 8px;
+          background-color: #9b9b9b;
+          border: solid 1px #9b9b9b;
+        }
+      }
+    }
+  }
+  .form-page {
+    @include flex-column-justify-center();
+    @include form-text-input;
+    position: relative;
+    margin: 32px 0 0 0;
+    .img {
+      height: 20px;
+      width: 20px;
+      margin-right: 16px;
+    }
+    .country-code {
+      width: 30px;
+      margin-right: 8px;
+    }
+    .role {
+      line-height: 20px;
+      font-size: 14px;
+      width: 50px;
+      color: $heading-text-color;
+      font-weight: 500;
+      margin-right: 8px;
+    }
+    .footer-message {
+      width: 300px;
+      height: 44px;
+      font-family: AvenirNext;
+      font-size: $standard-text-size;
+      font-weight: 600;
+      letter-spacing: normal;
+      color: $heading-text-color;
+      margin: 16px 0;
+      span {
+        color: $error-color;
+      }
+    }
+  }
+  .signup-footer {
+    @include flex-column-center();
+    position: relative;
+    bottom: 0;
+    margin: 0 auto auto auto;
+    .submit {
+      width: 300px;
+    }
+    .signup-placeholder {
+      font-family: AvenirNext;
+      font-size: $standard-text-size;
+      font-weight: 600;
+      letter-spacing: normal;
+      color: $primary-text-color;
+      margin: 16px 0;
+      .link {
+        @include link-with-animated-border;
+        color: $link-hover-color;
+      }
+    }
+    .footer-logo {
+      width: 40%;
+      margin: 32px 0 0 0;
+    }
+  }
+
+  @keyframes identifier {
+  }
+  .show {
+    transition: opacity 0.15s ease-in;
+    opacity: 1;
+    left: 0px;
+    display: flex;
+  }
+  .pending {
+    transition: opacity 0.15s ease-out;
+    left: 200px;
+    opacity: 0;
+    display: none;
+  }
+
+  .filled {
+    transition: opacity 0.15s ease-out;
+    left: -200px;
+    opacity: 0;
+    display: none;
+  }
+}

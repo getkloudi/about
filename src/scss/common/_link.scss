@@ -1,0 +1,25 @@
+@import '../../scss/common/variables';
+
+@mixin link-with-hover-color {
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+@mixin link-with-animated-border {
+  @include link-with-hover-color;
+  display: inline-block;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: $link-hover-color;
+    transition: width 420ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

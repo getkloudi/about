@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>View More</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Querybar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bar---Query-v2-1.1" transform="translate(-297.000000, -140.000000)" fill="#4A4A4A">
+            <g id="Querbar" transform="translate(284.000000, 115.000000)">
+                <g id="Button.Left" transform="translate(0.000000, 14.000000)">
+                    <g id="View-More" transform="translate(16.000000, 16.000000) scale(-1, 1) rotate(-90.000000) translate(-16.000000, -16.000000) translate(11.000000, 13.500000)">
+                        <path d="M4.99139617,5 C4.8378738,5 4.70993849,4.94738919 4.58200317,4.84216757 L0.23220259,1.15941076 C-0.0492550949,0.922662107 -0.0748421571,0.501775615 0.155441403,0.238721557 C0.385724964,-0.0506379061 0.79511796,-0.0769433119 1.05098858,0.15980534 L4.99139617,3.50059187 L8.95739082,0.15980534 C9.23884851,-0.0769433119 9.62265444,-0.0243325003 9.852938,0.238721557 C10.0832216,0.528081021 10.0320474,0.922662107 9.77617681,1.15941076 L5.42637623,4.84216757 C5.27285386,4.94738919 5.11933148,5 4.99139617,5 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

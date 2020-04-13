@@ -1,0 +1,30 @@
+@import './common/bootstrap-essentials';
+@import './common/mixins';
+@import './common/span';
+@import './common/variables';
+
+.signupPage {
+  @include clear();
+  width: 100vw;
+  min-height: 100vh;
+  @include flex-row();
+
+  @media only screen and (min-width: 0px) {
+    .formContainer {
+      @include make-col(12);
+    }
+  }
+
+  @media only screen and (min-width: 960px) {
+    .formContainer {
+      @include make-col(8);
+    }
+  }
+
+  .formContainer {
+    @include hexagon-background-left-diagonal();
+    position: relative;
+    @include flex-row-center();
+    margin: 0 auto;
+  }
+}
