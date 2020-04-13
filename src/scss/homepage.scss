@@ -10,7 +10,7 @@
   height: 100vh;
 
   .contentWrapper {
-    @include flex-center;
+    @include flex-column-center;
     width: 100vw;
     max-width: $container-width;
     margin: auto auto;
@@ -22,7 +22,7 @@
           .headingH1 {
             font-size: $desktop-h2;
           }
-          .subheadingH5 {
+          .subheadingH4 {
             font-size: $mobile-h5;
           }
         }
@@ -35,7 +35,7 @@
           .headingH1 {
             font-size: $desktop-h1;
           }
-          .subheadingH5 {
+          .subheadingH4 {
             font-size: $mobile-h5;
           }
         }
@@ -45,11 +45,16 @@
     @media only screen and (min-width: 960px) {
       .content {
         @include flex-row-justify-center();
-        margin: auto auto;
+        margin: 32px auto;
         .terminalIcon {
           height: 46px;
           font-size: 36px;
           margin: 18px 24px auto 0;
+        }
+        .smallTerminalIcon {
+          height: 35px;
+          font-size: 28px;
+          margin: 17px 24px auto 0;
         }
         .headingWrapper {
           max-width: 960px;
@@ -57,12 +62,24 @@
           .headingH1 {
             font-size: 64px;
           }
-          .subheadingH5 {
+          .headingH2 {
+            font-size: 48px;
+          }
+          .headingH5 {
+            max-width: 640px;
+            font-size: $desktop-h5;
+          }
+          .subheadingH4 {
             max-width: 720px;
             font-size: $desktop-h4;
-            margin: 16px 0 0 0;
           }
+          .subheadingH5 {
+            max-width: 640px;
+            font-size: $desktop-h5;
+          }
+          .subheadingH6,
           .defaultText {
+            max-width: 720px;
             font-size: $desktop-h6;
           }
           .formPage {
@@ -77,7 +94,6 @@
 
     @media only screen and (min-width: 1280px) {
     }
-
     .content {
       .terminalIcon {
         background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 50%);
@@ -86,7 +102,6 @@
         -webkit-text-fill-color: transparent;
         opacity: 0.8;
         cursor: default;
-
         font-family: 'Futura';
         font-weight: 600;
       }
@@ -98,20 +113,60 @@
           display: block;
           margin: 0 0;
         }
+
         .headingH1 {
           @include flex-row-justify-center;
           @include clear-padding;
-          font-family: 'Futura';
           color: $primary-text-color;
           cursor: default;
+          font-family: 'Futura';
+        }
+        .headingH2 {
+          @include flex-row-justify-center;
+          @include clear-padding;
+          color: $primary-text-color;
+          cursor: default;
+          font-family: 'Futura';
+        }
+        .headingH5 {
+          @include flex-column-justify-center;
+          @include clear-padding;
+          font-family: 'AvenirNext';
+          font-weight: normal;
+          color: $primary-text-color;
+          margin: 0 auto;
+          cursor: default;
+          .demibold {
+            font-weight: 600;
+          }
+          p {
+            @include clear-margin;
+          }
+        }
+
+        .subheadingH4 {
+          @include flex-row-justify-center;
+          @include clear-padding;
+          color: $secondary-text-color;
+          cursor: default;
+          font-family: 'AvenirNext';
+          font-weight: normal;
+          margin: 16px 0 0 0;
         }
         .subheadingH5 {
-          @include flex-row-justify-center;
+          @include flex-column-justify-center;
           @include clear-padding;
           font-family: 'AvenirNext';
           font-weight: normal;
           color: $secondary-text-color;
+          margin: 0 auto;
           cursor: default;
+          .demibold {
+            font-weight: 500;
+          }
+          p {
+            @include clear-margin;
+          }
         }
 
         .defaultText {
@@ -155,81 +210,14 @@
             }
           }
         }
-      }
-    }
-  }
 
-  .integrations-logo-container {
-    width: 100vw;
-    background-color: $secondary-bg-color;
-  }
-
-  .scope-container {
-    width: 100vw;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 48px;
-    .scope {
-      width: 100vw;
-      max-width: $container-width;
-      @include hexagon-background;
-      @include make-row();
-      padding-top: 80px;
-    }
-  }
-
-  .community-container {
-    width: 100vw;
-    display: none;
-    background-color: $secondary-bg-color;
-  }
-
-  .pricing-widget-container {
-    width: 100vw;
-  }
-
-  .guarantee-container {
-    width: 100vw;
-    background-color: $secondary-bg-color;
-    display: none;
-    .guarantee {
-      height: 360px;
-      max-width: $container-width;
-      @include make-row();
-      @include clear;
-      align-items: center;
-      margin: 0 auto;
-      .section-img {
-        @include make-col(4);
-        @include make-col-offset(1);
-        object-fit: contain;
-      }
-      .guarantee-text {
-        @include make-col(6);
-        margin: 0 0 0 16px;
-        .heading {
-          @include clear;
-          font-size: $desktop-h4;
-          font-weight: 600;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.58;
-          letter-spacing: normal;
-          color: $heading-text-color;
-        }
-        .content {
-          @include clear;
-          font-size: $desktop-h6;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: normal;
-          letter-spacing: normal;
-          color: $heading-text-color;
+        .illustration {
+          width: 320px;
+          margin: auto;
         }
         .button {
-          margin-top: 40px;
+          margin: 16px auto;
+          border-radius: 32px;
         }
       }
     }
