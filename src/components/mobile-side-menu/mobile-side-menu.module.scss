@@ -1,0 +1,160 @@
+@import '../../scss/common/_variables';
+@import '../../scss/common/_bootstrap-essentials.scss';
+@import '../../scss/common/_mixins.scss';
+@import '../../scss/common/_link.scss';
+
+.mobileSideMenuContainer {
+  position: relative;
+  .mobileSideMenu {
+    @include flex-column-center;
+    background: rgba($color: white, $alpha: 0.8);
+    background-position: left top, right bottom;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat, no-repeat;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    overflow: hidden;
+    backdrop-filter: blur(4px) grayscale(0.4);
+    flex: 1 1 0%;
+    transition: opacity 0.5s ease 0s;
+
+    padding: 32px 16px;
+    z-index: $high-z;
+
+    .topbar {
+      @include flex-row-center;
+      width: 100%;
+      height: 72px;
+      justify-content: center;
+
+      .logo {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+      }
+      .filler {
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+
+      .close {
+        @include flex-center;
+        height: 32px;
+        width: 32px;
+        background: rgba($color: #d8d8d8, $alpha: 0.4);
+        cursor: pointer;
+        pointer-events: auto;
+        border: solid 1px #e4e5ec;
+        border-radius: 50%;
+        z-index: $high-z;
+        box-shadow: 0 4px 8px 0 rgba(69, 73, 91, 0.5);
+        transition: all 100ms ease-in-out;
+
+        img {
+          height: 8px;
+          width: 8px;
+          margin: auto auto;
+        }
+
+        &:hover {
+          box-shadow: 0 1px 2px 0 rgba(69, 73, 91, 0.5);
+        }
+      }
+    }
+    .wrapper {
+      width: 100%;
+      margin: auto 0;
+      padding: 0 0 72px 0;
+
+      .contentContainer {
+        @include flex-column-center;
+        width: 100%;
+        border-radius: 8px;
+
+        .list {
+          width: 100%;
+          margin: 0 auto 0 auto;
+          padding: 16px 16px 0 16px;
+
+          .item {
+            @include flex-row-justify-center;
+            height: 64px;
+            font-size: $mobile-h3;
+            color: $primary-color;
+            font-weight: 500;
+            margin: 16px 16px;
+
+            div {
+              margin: auto auto;
+              border-bottom: solid 1px $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .actionButtons {
+    @include flex-row-center;
+    width: 100%;
+    .buttons {
+      @include flex-row-center;
+      border-radius: 32px;
+      margin: 16px auto;
+    }
+
+    .item {
+      @include flex-row-center;
+      font-size: $mobile-h3;
+      color: $primary-text-color;
+      font-weight: 600;
+      margin: auto 32px auto auto;
+
+      a {
+        @include link-with-hover-color;
+      }
+    }
+  }
+
+  .isHidden {
+    display: none;
+    transform: translateX(100%);
+  }
+  .isOpen {
+    transform: translateX(0%);
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  .is-animating {
+    animation-duration: 420ms;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .slideInRight {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+  }
+  .slideInLeft {
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+  }
+}

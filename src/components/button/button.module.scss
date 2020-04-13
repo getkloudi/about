@@ -1,0 +1,313 @@
+@import '../../scss/common/mixins';
+@import '../../scss/common/variables';
+
+.btn {
+  @include flex-row-justify-center;
+  height: 60px;
+  font-family: 'Futura';
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0 32px;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+
+  .text {
+    margin: auto 0 auto 16px;
+  }
+  img {
+    fill: $primary-color;
+    width: 8px;
+    height: 16px;
+    margin: auto 16px;
+  }
+  &.small {
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+.btnPrimary {
+  border-radius: 8px;
+  color: $white;
+  background: $primary-gradient;
+  border: none;
+  &:hover {
+    border: solid 1px $primary-color;
+    transform: scale(1.015);
+    -webkit-transform: scale(1.015);
+    -ms-transform: scale(1.015);
+    -moz-transform: scale(1.015);
+  }
+}
+
+.singleColor {
+  background: $primary-color;
+}
+
+.btnOutlinePrimary {
+  border-radius: 8px;
+  border-color: $primary-gradient;
+  color: $primary-color;
+  background: transparent;
+  .text {
+    margin: auto 16px;
+  }
+  &:hover {
+    color: #fff;
+    background: $primary-gradient;
+    box-shadow: 1px 1px 1px 1px rgba($color: $primary-color, $alpha: 0.5);
+    transform: scale(1.015);
+    -webkit-transform: scale(1.015);
+    -ms-transform: scale(1.015);
+    -moz-transform: scale(1.015);
+  }
+}
+
+.btnAddFeature {
+  width: 320px;
+  height: 60px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(17, 153, 142, 0.1);
+  font-family: 'Futura';
+  font-size: 20px;
+  font-weight: 500;
+  color: #11998e;
+  text-transform: none;
+  @include flex-row-center();
+  justify-content: center;
+  padding: 0px;
+  &.small {
+    width: 103px;
+    height: 40px;
+  }
+  &:hover {
+    background-color: #11998e;
+    color: #fff;
+  }
+  .placeholder-text {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+.btnOutlineInactive {
+  height: 40px;
+  color: #9b9b9b;
+  font-size: 14px;
+  &:hover {
+    background-color: transparent;
+    color: #9b9b9b;
+  }
+  &:not(:disabled) {
+    &:not(.disabled) {
+      cursor: default;
+      &:active {
+        color: #9b9b9b;
+        background-color: transparent;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.iconButton {
+  @include flex-center;
+  @include clear;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: solid 1px #e4e5ec;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(69, 73, 91, 0.5);
+  transition: box-shadow 200ms ease-in-out;
+  .icon {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 10px;
+    width: 6px;
+  }
+  &:hover {
+    box-shadow: 0 6px 12px 0 rgba(69, 73, 91, 0.75);
+  }
+  &:active {
+    box-shadow: 0 2px 4px 0 rgba(69, 73, 91, 0.5);
+  }
+}
+
+.deleteIconButton {
+  @include flex-center;
+  @include clear;
+  width: 40px;
+  height: 40px;
+  background-color: rgba($color: $error-color, $alpha: 0.1);
+  border-radius: 8px;
+  border: none;
+
+  .icon {
+    height: 28px;
+    width: 18px;
+    background-image: url('./assets/delete.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: auto auto;
+  }
+
+  &:hover {
+    background-color: $error-color;
+    .icon {
+      background-image: url('./assets/delete-hover.svg');
+    }
+  }
+}
+
+.selectMultipleIconButton {
+  @include flex-center;
+  @include clear;
+  width: 40px;
+  height: 40px;
+  background-color: rgba($color: $secondary-text-color, $alpha: 0.1);
+  border-radius: 8px;
+  border: none;
+
+  .icon {
+    height: 20px;
+    width: 20px;
+    background-image: url('./assets/select-multiple.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: auto auto;
+  }
+
+  &:hover {
+    background-color: $secondary-text-color;
+    .icon {
+      background-image: url('./assets/select-multiple-hover.svg');
+    }
+  }
+}
+
+.linkIconButton {
+  @include flex-center;
+  @include clear;
+  width: 40px;
+  height: 40px;
+  background-color: rgba($color: $secondary-text-color, $alpha: 0.1);
+  border-radius: 8px;
+  border: none;
+
+  .icon {
+    height: 20px;
+    width: 20px;
+    background-image: url('./assets/link.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: auto auto;
+  }
+
+  &:hover {
+    background-color: $secondary-text-color;
+    .icon {
+      background-image: url('./assets/link-hover.svg');
+    }
+  }
+}
+
+.querybarBackButton {
+  @include flex-center;
+  @include clear;
+  width: 32px;
+  height: 32px;
+  background-color: rgba($color: $secondary-text-color, $alpha: 0.1);
+  border-radius: 8px;
+  border: solid 1px $primary-text-color;
+
+  .icon {
+    height: 14px;
+    width: 7px;
+    background-image: url('./assets/querybar-back.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: auto auto;
+  }
+
+  &:hover {
+    background-color: rgba($color: $primary-text-color, $alpha: 1);
+    .icon {
+      background-image: url('./assets/querybar-back-hover.svg');
+    }
+  }
+}
+
+.activeSelectMultipleIconButton {
+  background-color: $secondary-text-color;
+  .icon {
+    background-image: url('./assets/select-multiple-active.svg');
+  }
+  &:hover {
+    .icon {
+      background-image: url('./assets/select-multiple-active.svg');
+    }
+  }
+}
+
+.activeLinkIconButton {
+  background-color: $secondary-text-color;
+  .icon {
+    background-image: url('./assets/link-active.svg');
+  }
+  &:hover {
+    .icon {
+      background-image: url('./assets/link-active.svg');
+    }
+  }
+}
+
+.btnTwitter {
+  min-width: 200px;
+  border-radius: 8px;
+  border-color: #03a9f4;
+  color: #03a9f4;
+  background: transparent;
+  &:hover {
+    transform: scale(1.015);
+    -webkit-transform: scale(1.015);
+    -ms-transform: scale(1.015);
+    -moz-transform: scale(1.015);
+  }
+  img {
+    height: 16px;
+    width: 16px;
+    margin: auto 16px auto 0;
+  }
+}
+
+.btnNotion {
+  min-width: 200px;
+  border-radius: 8px;
+  border-color: #111111;
+  color: #111111;
+  background: transparent;
+  &:hover {
+    transform: scale(1.015);
+    -webkit-transform: scale(1.015);
+    -ms-transform: scale(1.015);
+    -moz-transform: scale(1.015);
+  }
+  img {
+    height: 24px;
+    width: 24px;
+    margin: auto 16px auto 0;
+  }
+}

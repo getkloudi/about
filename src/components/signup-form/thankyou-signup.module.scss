@@ -1,0 +1,81 @@
+@import '../../scss/common/mixins';
+@import '../../scss/common/variables';
+@import '../../scss/common/input';
+@import '../../scss/common/link';
+
+.container {
+  @include flex-column-center();
+  width: 300px;
+  position: relative;
+  min-height: 80%;
+  padding: 32px 0px;
+  margin: auto auto;
+
+  .header {
+    @include flex-column-center();
+    margin: auto auto 0 auto;
+
+    .logo {
+      width: 64px;
+    }
+    .greeting {
+      @include clear();
+      font-family: 'AvenirNext';
+      font-size: $desktop-h4;
+      font-weight: 600;
+      color: $heading-text-color;
+      margin-top: 16px;
+    }
+    .message {
+      @include clear();
+      font-family: 'AvenirNext';
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $heading-text-color;
+    }
+  }
+  .content {
+    @include flex-column-justify-center();
+    position: relative;
+    margin: 32px 0 0 0;
+
+    .message {
+      font-family: 'AvenirNext';
+      font-size: $default-text;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $heading-text-color;
+      margin: 0 0 32px 0;
+    }
+
+    .submit {
+      width: 360px;
+      margin: 0 auto;
+      font-family: 'Futura';
+    }
+
+    .divider {
+      width: 100%;
+      margin: 16px 4px 4px 4px;
+      border: 0.5px solid $secondary-text-color;
+    }
+  }
+
+  .footer {
+    @include flex-column-center();
+    position: relative;
+    bottom: 0;
+    margin: 0 auto auto auto;
+    .logo {
+      width: 40%;
+      margin: 24px auto 0 auto;
+    }
+    .btn {
+      width: 100%;
+      margin: 8px auto;
+    }
+  }
+}

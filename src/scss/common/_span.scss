@@ -1,0 +1,17 @@
+@import './variables';
+
+.green-span {
+  color: $secondary-color;
+}
+
+.demi-bold-span {
+  font-weight: 600;
+}
+
+.error-span {
+  color: $error-color;
+}
+
+.underline-span {
+  text-decoration: underline;
+}

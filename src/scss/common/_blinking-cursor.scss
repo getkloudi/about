@@ -1,0 +1,47 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import '../../scss/common/variables';
+
+@mixin blinking-cursor-animation {
+  .blinking-cursor {
+    font-weight: 100;
+    font-size: $desktop-h4;
+    font-family: 'Futura';
+    color: $primary-text-color;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: $primary-text-color;
+    }
+  }
+}
+
+@mixin blinking-cursor-animation-deactivated {
+  @include blinking-cursor-animation;
+
+  .blinking-cursor {
+    color: $secondary-text-color;
+    animation: 1s blink-deactivated step-end infinite;
+  }
+
+  @keyframes blink-deactivated {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: $secondary-text-color;
+    }
+  }
+}

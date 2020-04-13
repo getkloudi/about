@@ -1,0 +1,92 @@
+@import '../../scss/common/bootstrap-essentials';
+@import '../../scss/common/link';
+@import '../../scss/common/mixins';
+@import '../../scss/common/variables';
+
+.toolbarWrapper {
+  @include white-blur();
+  @include flex-center();
+  width: 100vw;
+  max-width: $container-width;
+
+  @media only screen and (min-width: 0px) {
+    .item {
+      display: none;
+      font-size: $mobile-h6;
+    }
+    .button {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  @media only screen and (min-width: 960px) {
+    .item {
+      display: flex;
+      font-size: $desktop-h6;
+    }
+    .button {
+      display: block;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+
+  .toolbar {
+    @include flex-row-center();
+    @include clear-margin();
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0px 32px;
+    height: 72px;
+    justify-content: center;
+    color: $primary-text-color;
+    .logo {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      cursor: pointer;
+    }
+    .logoText {
+      font-weight: 500;
+      font-size: $desktop-h5;
+      color: $primary-color;
+      margin: auto 0 auto 4px;
+      cursor: pointer;
+    }
+    .filler {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+    .item {
+      @include link-with-animated-border;
+      color: $primary-text-color;
+      cursor: pointer;
+      margin-left: 40px;
+      font-weight: 500;
+      &:after {
+        background: $primary-gradient;
+      }
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .button {
+      @include flex-row-center;
+      border-radius: 32px;
+      box-sizing: border-box;
+      margin-left: 40px;
+      margin-right: 16px;
+    }
+    .hamburger {
+      box-sizing: border-box;
+      height: 16px;
+      width: 22px;
+    }
+  }
+}
