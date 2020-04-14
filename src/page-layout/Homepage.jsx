@@ -19,7 +19,26 @@ export default class Homepage extends React.PureComponent {
     super(props);
     this.state = {
       email: "",
+      mobileScreen: false,
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    if (window.innerWidth < 960) {
+      this.setState({ mobileScreen: true });
+    } else {
+      this.setState({ mobileScreen: false });
+    }
   }
 
   onInputChange = (key, value) => {
@@ -46,7 +65,10 @@ export default class Homepage extends React.PureComponent {
         <HomepageToolbar signUpVisibility={false} />
         <div
           className="contentWrapper"
-          style={{ marginTop: "128px", marginBottom: "64px" }}>
+          style={this.state.mobileScreen ?
+            { marginTop: "48px", marginBottom: "48px" } :
+            { marginTop: "128px", marginBottom: "64px" }
+          }>
           <div className="content">
             <div className="terminalIcon">{`>_ `}</div>
             <div className="headingWrapper">
@@ -57,7 +79,12 @@ export default class Homepage extends React.PureComponent {
                 {`A seamless workflow designed to get the most out of your development experience`}
               </div>
               <Form className="formPage" onSubmit={e => this.onFormSubmit(e)}>
-                <div className="input-wrapper">
+                <div
+                  className="input-wrapper"
+                  style={this.state.mobileScreen ?
+                    { border: "none", padding: "0 0" } :
+                    {}}
+                >
                   <img src={emailIcon} alt="Email icon" className="img" />
                   <Input
                     className="input"
@@ -67,11 +94,12 @@ export default class Homepage extends React.PureComponent {
                   />
                   <PrimaryButton
                     className="button"
-                    onClick={_ => this.props.onEAPSignUpClick()}>
+                    onClick={_ => this.props.onEAPSignUpClick()}
+                    small={this.state.mobileScreen ? true : false}
+                  >
                     {`Get Early Access`}
                   </PrimaryButton>
                 </div>
-
                 <input
                   type="submit"
                   style={{
@@ -105,108 +133,59 @@ export default class Homepage extends React.PureComponent {
             </div>
           </div>
         </div>
-        <div className="contentWrapper" >
-          <div className="content">
-            <div className="terminalIcon smallTerminalIcon">{`>_ `}</div>
-            <div className="headingWrapper">
-              <div className="headingH2">
-                {`Integrate all your tools at one place`}
-              </div>
-              <div className="subheadingH5">
-                <p>{`Easily plugin all tools to get a `}
-                  <span className="demibold">
-                    {`connected and actionable `}
-                    <br />
-                  </span>
-                  {`view of all the data.`}
-                </p>
-              </div>
-              <img className={"illustration"} src={connect} alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="contentWrapper" >
-          <div className="content">
-            <div className="terminalIcon smallTerminalIcon">{`>_ `}</div>
-            <div className="headingWrapper">
-              <div className="headingH2">
-                {`Simple view of all your data`}
-              </div>
-              <div className="subheadingH5">
-                <p>{`View connected data of all your tools through `}
-                  <br />
-                  {`a `}
-                  <span className="demibold">
-                    {` simple conversational search`}
-                  </span>
-                  {`.`}
-                </p>
-              </div>
-              <img className={"illustration"} src={converse} alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="contentWrapper" >
-          <div className="content">
-            <div className="terminalIcon smallTerminalIcon">{`>_ `}</div>
-            <div className="headingWrapper">
-              <div className="headingH2">
-                {`View and take actions on data`}
-              </div>
-              <div className="subheadingH5">
-                <p>{`Enriched and actionable view of  `}
-                  <span className="demibold">
-                    {`collated data `}
-                    <br />
-                  </span>
-                  {`from all your tools.`}
-                </p>
-              </div>
-              <img className={"illustration"} src={collate} alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="contentWrapper" >
-          <div className="content">
-            <div className="terminalIcon smallTerminalIcon">{`>_ `}</div>
-            <div className="headingWrapper">
-              <div className="headingH2">
-                {`Share your queries with your team`}
-              </div>
-              <div className="subheadingH5">
-                <p>
-                  <span className="demibold">
-                    {`Collaboratively `}
-                  </span>
-                  {`improve your team’s productivity by sharing  `}
-                  <br />
-                  {`queries and help them automate workflows.`}
-                </p>
-              </div>
-              <img className={"illustration"} src={collaborate} alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="contentWrapper" style={{ background: "#fafafa" }}>
-          <div className="content">
-            <div className="headingWrapper">
-              <div className="headingH2">
-                {`Unlock your productivity with Kloudi`}
-              </div>
-              <div className="headingH5">
-                <p style={{ marginBottom: "32px" }}>
-                  {`We are giving early access to a select few. Request now`}
-                  <br /> {` to jump the queue.`}
-                </p>
-              </div>
-              <PrimaryButton
-                className="button"
-                onClick={_ => this.props.onEAPSignUpClick()}>
-                {`Request Access`}
-              </PrimaryButton>
-            </div>
-          </div>
-        </div>
+        <HomepageSection
+          headingH2={`Integrate all your tools at one place`}
+          headingH5={<p>{`Easily plugin all tools to get a `}
+            <span className="demibold">
+              {`connected and actionable `}
+            </span>
+            {`view of all the data.`}
+          </p>}
+          mobileScreen={this.state.mobileScreen}
+          illustration={connect}
+        />
+        <HomepageSection
+          headingH2={`Simple view of all your data`}
+          headingH5={<p>{`View connected data of all your tools through `}
+            <br />
+            {`a `}
+            <span className="demibold">
+              {` simple conversational search`}
+            </span>
+            {`.`}
+          </p>}
+          mobileScreen={this.state.mobileScreen}
+          illustration={converse}
+        />
+        <HomepageSection
+          headingH2={`View and take actions on data`}
+          headingH5={<p>{`Enriched and actionable view of  `}
+            <span className="demibold">
+              {`collated data `}
+              <br />
+            </span>
+            {`from all your tools.`}
+          </p>}
+          mobileScreen={this.state.mobileScreen}
+          illustration={collate}
+        />
+        <HomepageSection
+          headingH2={`Share your queries with your team`}
+          headingH5={<p>
+            <span className="demibold">
+              {`Collaboratively `}
+            </span>
+            {`improve your team’s productivity by sharing  `}
+            {`queries and help them automate workflows.`}
+          </p>}
+          mobileScreen={this.state.mobileScreen}
+          illustration={collaborate}
+        />
+        <HomepageEAPSection
+          headingH2={`Unlock your productivity with Kloudi`}
+          headingH5={`We are giving early access to a select few. Request now to jump the queue.`}
+          mobileScreen={this.state.mobileScreen}
+        />
         <div className="footerContainer">
           <Footer />
         </div>
@@ -214,3 +193,48 @@ export default class Homepage extends React.PureComponent {
     );
   }
 }
+
+const HomepageEAPSection = props => {
+  return (
+    <div className="contentWrapper" style={{ background: "#fafafa" }}>
+      <div className="content">
+        <div className="headingWrapper">
+          <div className="headingH2">{props.headingH2}</div>
+          <div className="headingH5">
+            <article style={props.mobileScreen ?
+              { marginBottom: "32px" } :
+              { marginBottom: "32px" }}
+            >{props.headingH5}</article>
+          </div>
+          <PrimaryButton
+            className="button"
+            onClick={_ => this.props.onEAPSignUpClick()}
+            small={props.mobileScreen ? true : false}
+          >
+            {`Request Access`}
+          </PrimaryButton>
+        </div>
+      </div>
+    </div>);
+};
+
+const HomepageSection = props => {
+  return (
+    <div className="contentWrapper">
+      <div className="content">
+        <div className="terminalIcon smallTerminalIcon">{`>_ `}</div>
+        <div className="headingWrapper">
+          <div className="headingH2">{props.headingH2}</div>
+          <div className="subheadingH5">
+            <article style={props.mobileScreen ?
+              { marginBottom: "32px" } :
+              { marginBottom: "32px" }}
+            >{props.headingH5}</article>
+          </div>
+          {props.illustration ?
+            <img className={"illustration"} src={props.illustration} alt="" /> :
+            ``}
+        </div>
+      </div>
+    </div>);
+};

@@ -17,35 +17,64 @@
 
     @media only screen and (min-width: 0px) {
       .content {
+        margin: 32px auto;
         @include flex-column-center();
+        .terminalIcon {
+          font-size: 24px;
+          margin: 0 auto;
+        }
         .headingWrapper {
-          .headingH1 {
-            font-size: $desktop-h2;
+          .headingH1,
+          .subheadingH1 {
+            padding: 0 16px;
+            font-size: 48px;
           }
+          .headingH2,
+          .subheadingH2 {
+            font-size: 32px;
+          }
+          .headingH4,
           .subheadingH4 {
+            font-size: $mobile-h4;
+            padding: 0 16px;
+          }
+          .headingH5,
+          .subheadingH5 {
+            max-width: 480px;
             font-size: $mobile-h5;
+            padding: 0 16px;
+          }
+          .headingH6,
+          .subheadingH6,
+          .defaultText {
+            max-width: 720px;
+            font-size: $mobile-h6;
+            padding: 0 16px;
+          }
+          .formPage {
+            .input-wrapper {
+              .img {
+                display: none;
+              }
+              .input {
+                display: none;
+              }
+              .button {
+                margin: 0 auto;
+              }
+            }
           }
         }
       }
     }
 
     @media only screen and (min-width: 480px) {
-      .content {
-        .headingWrapper {
-          .headingH1 {
-            font-size: $desktop-h1;
-          }
-          .subheadingH4 {
-            font-size: $mobile-h5;
-          }
-        }
-      }
     }
 
     @media only screen and (min-width: 960px) {
       .content {
         @include flex-row-justify-center();
-        margin: 32px auto;
+        margin: 48px auto;
         .terminalIcon {
           height: 46px;
           font-size: 36px;
@@ -59,33 +88,52 @@
         .headingWrapper {
           max-width: 960px;
           margin: auto 0;
-          .headingH1 {
+          .headingH1,
+          .subheadingH1 {
+            @include clear-padding;
             font-size: 64px;
           }
-          .headingH2 {
+          .headingH2,
+          .subheadingH2 {
+            @include clear-padding;
             font-size: 48px;
           }
-          .headingH5 {
-            max-width: 640px;
-            font-size: $desktop-h5;
-          }
+          .headingH4,
           .subheadingH4 {
+            @include clear-padding;
             max-width: 720px;
             font-size: $desktop-h4;
+            padding: 0 0;
           }
+          .headingH5,
           .subheadingH5 {
-            max-width: 640px;
+            @include clear-padding;
+            max-width: 480px;
             font-size: $desktop-h5;
+            padding: 0 0;
           }
+          .headingH6,
           .subheadingH6,
           .defaultText {
+            @include clear-padding;
+            @include clear-margin;
             max-width: 720px;
             font-size: $desktop-h6;
+            padding: 0 0;
           }
           .formPage {
-            width: 640px;
-            .input {
-              font-size: $desktop-h6;
+            max-width: 600px;
+            .input-wrapper {
+              .img {
+                display: block;
+              }
+              .input {
+                display: block;
+                font-size: $desktop-h6;
+              }
+              .button {
+                margin: 0 0;
+              }
             }
           }
         }
@@ -94,6 +142,7 @@
 
     @media only screen and (min-width: 1280px) {
     }
+
     .content {
       .terminalIcon {
         background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 50%);
@@ -116,21 +165,18 @@
 
         .headingH1 {
           @include flex-row-justify-center;
-          @include clear-padding;
           color: $primary-text-color;
           cursor: default;
           font-family: 'Futura';
         }
         .headingH2 {
           @include flex-row-justify-center;
-          @include clear-padding;
           color: $primary-text-color;
           cursor: default;
           font-family: 'Futura';
         }
         .headingH5 {
           @include flex-column-justify-center;
-          @include clear-padding;
           font-family: 'AvenirNext';
           font-weight: normal;
           color: $primary-text-color;
@@ -146,7 +192,6 @@
 
         .subheadingH4 {
           @include flex-row-justify-center;
-          @include clear-padding;
           color: $secondary-text-color;
           cursor: default;
           font-family: 'AvenirNext';
@@ -155,7 +200,6 @@
         }
         .subheadingH5 {
           @include flex-column-justify-center;
-          @include clear-padding;
           font-family: 'AvenirNext';
           font-weight: normal;
           color: $secondary-text-color;
@@ -171,7 +215,6 @@
 
         .defaultText {
           @include flex-row-justify-center;
-          @include clear;
           position: relative;
           font-family: 'AvenirNext';
           font-weight: 500;
@@ -187,25 +230,25 @@
           //All jugaas css
           .input-wrapper {
             width: 100%;
-            height: 58px;
+            height: 60px;
             box-shadow: none;
-            border-color: $secondary-text-color;
+            border-color: rgba($color: $border-color, $alpha: 1);
             border-right-color: transparent;
             padding: 0 0 0 32px;
             border-radius: 32px;
 
             .img {
-              min-width: 32px;
-              height: 32px;
+              min-width: 24px;
+              height: 24px;
               margin-right: 16px;
             }
             .input {
               margin: 0 16px 0 0;
-              font-size: $desktop-h6;
             }
             .button {
-              width: 100%;
-              margin: 0 0 0 0;
+              div {
+                width: 160px;
+              }
               border-radius: 32px;
             }
           }
