@@ -2,26 +2,26 @@ var targetEnv = process.env.TARGET_ENV || process.env.NODE_ENV || 'development';
 const path = require('path');
 require('dotenv').config({
   path: path.resolve(`.env.${targetEnv}`),
-  debug: process.env.DEBUG,
+  debug: process.env.DEBUG
 });
 
 module.exports = {
   siteMetadata: {
     title: `Kloudi - Take control of your tools`,
     description: ``,
-    author: `Kloudi`,
+    author: `Kloudi`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: `gatsby-plugin-sass`
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -34,8 +34,8 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#FFFFFF`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/icon.png` // This path is relative to the root of the site.
+      }
     },
     {
       resolve: 'gatsby-plugin-sentry',
@@ -47,18 +47,18 @@ module.exports = {
         environment: targetEnv,
         autoBreadcrumbs: {
           console: true, // console logging
-          http: true, // http and https requests
-        },
-      },
+          http: true // http and https requests
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        whitelist: ['PLATFORM', 'GATSBY_API_URL'],
-      },
-    },
+        whitelist: ['GATSBY_API_URL', 'PLATFORM', 'TARGET_ENV']
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ],
+  ]
 };
