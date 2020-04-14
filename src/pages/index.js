@@ -1,11 +1,11 @@
 import React from 'react';
-import HomePresenter from '../presenters/HomePresenter';
-import HomePage from '../page-layout/HomePage';
+import HomepagePresenter from '../presenters/HomepagePresenter';
+import Homepage from '../page-layout/Homepage';
 
 export default function route(props) {
   return (
-    <HomePresenter {...props}>
-      <HomePage />
-    </HomePresenter>
+    <HomepagePresenter {...props}>
+      <Homepage />
+    </HomepagePresenter>
   );
 }
