@@ -7,7 +7,7 @@
   @include make-container();
   @include flex-column-center();
   @include clear();
-  height: 100vh;
+  height: 100%;
 
   .contentWrapper {
     @include flex-column-center;
