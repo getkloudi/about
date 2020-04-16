@@ -40,6 +40,13 @@ export default class SimpleSignupForm extends PureComponent {
     });
   };
 
+  onSigninClick = e => {
+    if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
+      window.location.href = `https://app-staging.kloudi.tech/sign-in`;
+    if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
+      window.location.href = `https://app.kloudi.tech/sign-in`;
+  };
+
   getFirstName = name => { return toTitleCase(name).split(' ')[0]; };
 
   render() {
@@ -101,7 +108,7 @@ export default class SimpleSignupForm extends PureComponent {
             )}
           <div className="signup-placeholder">
             Already using Kloudi?{" "}
-            <Link to="/sign-in" className="link">
+            <Link onClick={e => this.onSigninClick(e)} className="link">
               Sign In
             </Link>
           </div>

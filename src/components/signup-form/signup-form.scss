@@ -27,9 +27,18 @@
 
     .header-message {
       @include clear();
+      display: inline-block;
       font-family: 'AvenirNext';
       font-size: 24px;
+      text-align: center;
       color: $heading-text-color;
+      @media only screen and (min-width: 0px) {
+        max-width: 360px;
+      }
+
+      @media only screen and (min-width: 960px) {
+        max-width: 100%;
+      }
     }
     .page-indicator {
       @include flex-row-center();
