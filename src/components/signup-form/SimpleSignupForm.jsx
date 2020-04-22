@@ -73,7 +73,7 @@ export default class SimpleSignupForm extends PureComponent {
             <img src={nameIcon} alt="Name icon" className="img" />
             <Input
               className="input"
-              placeholder="Your Name"
+              placeholder="Your Full Name"
               onChange={e => this.onInputChange("name", e.target.value)}
               value={this.state.name}
               onBlur={this.validateName}
