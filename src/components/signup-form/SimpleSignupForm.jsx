@@ -41,9 +41,9 @@ export default class SimpleSignupForm extends PureComponent {
 
   onSigninClick = e => {
     if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
-      window.location.href = `https://app-staging.kloudi.tech/login${this.state.email ? `?${this.state.email}` : ``}`;
+      window.location.href = `https://app-staging.kloudi.tech/login${this.state.email ? `?email=${this.state.email}` : ``}`;
     if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-      window.location.href = `https://app.kloudi.tech/login${this.state.email ? `?${this.state.email}` : ``}`;
+      window.location.href = `https://app.kloudi.tech/login${this.state.email ? `?email=${this.state.email}` : ``}`;
   };
 
   getFirstName = name => { return toTitleCase(name).split(' ')[0]; };
