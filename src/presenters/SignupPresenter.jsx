@@ -89,7 +89,7 @@ export default class SignupPresenter extends Component {
       error: this.state.error,
       clearError: this.clearError,
       userInfoForThankYou: this.state.userInfoForThankYou,
-      emailInURL: UrlUtil.getParams("q")
+      emailInURL: UrlUtil.getParams("email")
     });
   }
 }

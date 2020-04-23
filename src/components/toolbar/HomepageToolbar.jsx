@@ -37,9 +37,9 @@ export default class HomepageToolbar extends PureComponent {
 
   onEAPSignUpClick() {
     if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
-      window.location.href = `/eap-signup`;
+      window.location.href = `/signup`;
     if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-      window.location.href = `/eap-signup`;
+      window.location.href = `/signup`;
   }
 
   onSignInClick() {
