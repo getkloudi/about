@@ -125,6 +125,7 @@
       color: $primary-text-color;
       margin: 16px 0;
       .link {
+        cursor: pointer;
         @include link-with-animated-border;
         color: $link-hover-color;
       }
