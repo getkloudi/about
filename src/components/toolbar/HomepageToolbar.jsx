@@ -44,9 +44,9 @@ export default class HomepageToolbar extends PureComponent {
 
   onSignInClick() {
     if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
-      window.location.href = `https://app-staging.kloudi.tech/sign-in`;
+      window.location.href = `https://app-staging.kloudi.tech/login`;
     if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-      window.location.href = `https://app.kloudi.tech/sign-in`;
+      window.location.href = `https://app.kloudi.tech/login`;
   }
 
   render() {
