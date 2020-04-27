@@ -108,7 +108,7 @@ export default class SimpleSignupForm extends PureComponent {
           <div className="signup-placeholder">
             Already using Kloudi?{" "}
             <a onClick={e => this.onSigninClick(e)} className="link">
-              Sign In
+              {`Login`}
             </a>
           </div>
           <img
