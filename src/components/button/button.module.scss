@@ -47,7 +47,7 @@
 
 .btnOutlinePrimary {
   border-radius: 8px;
-  border-color: $primary-gradient;
+  border-color: $primary-color;
   color: $primary-color;
   background: transparent;
   .text {
@@ -56,7 +56,6 @@
   &:hover {
     color: #fff;
     background: $primary-gradient;
-    box-shadow: 1px 1px 1px 1px rgba($color: $primary-color, $alpha: 0.5);
     transform: scale(1.015);
     -webkit-transform: scale(1.015);
     -ms-transform: scale(1.015);

@@ -3,7 +3,7 @@ import { Helmet as Head } from "react-helmet";
 import { Form, Input } from "reactstrap";
 import { Link } from "gatsby";
 
-import { PrimaryButton } from "../components/button";
+import { PrimaryButton, OutlineButton } from "../components/button";
 import Footer from "../components/footer/Footer";
 import HomepageToolbar from "../components/toolbar/HomepageToolbar";
 
@@ -123,16 +123,12 @@ export default class Homepage extends React.PureComponent {
         </div>
         <HomepageEAPSection
           headingH2={`Zero navigation for all your actions`}
-          headingH5={<span><p >{`Enabling cross-functionality of your tools to give you connected, enriched and actionable data.`}</p>
-            <p style={{ marginTop: "32px", marginBottom: "16px" }}>
-              <span className="demibold">{`Now`}</span>
-              {` present right in your `}
-              <span className="demibold"> {`IDE`}
-              </span>
+          headingH5={<span><p>{`Enabling cross-functionality of your tools to give you connected, enriched and actionable data.`}</p>
+            <p style={{ marginTop: "16px", marginBottom: "16px" }}>
+              <span className="demibold">{`Now`}</span>{` present right in your `}<span className="demibold"> {`IDE`}</span>
             </p>
           </span>
           }
-          href={`https://marketplace.visualstudio.com/items?itemName=Kloudi.kloudi`}
           ide
           illustration={ideIcon}
           mobileScreen={this.state.mobileScreen}
@@ -145,7 +141,6 @@ export default class Homepage extends React.PureComponent {
             </span>
             {`view of all the data.`}
           </p>}
-          // mobileScreen={this.state.mobileScreen}
           illustration={connect}
         />
         <HomepageSection
@@ -158,7 +153,6 @@ export default class Homepage extends React.PureComponent {
             </span>
             {`.`}
           </p>}
-          // mobileScreen={this.state.mobileScreen}
           illustration={converse}
         />
         <HomepageSection
@@ -170,7 +164,6 @@ export default class Homepage extends React.PureComponent {
             </span>
             {`from all your tools.`}
           </p>}
-          // mobileScreen={this.state.mobileScreen}
           illustration={collate}
         />
         <HomepageSection
@@ -182,7 +175,6 @@ export default class Homepage extends React.PureComponent {
             {`improve your team’s productivity by sharing  `}
             {`queries and help them automate workflows.`}
           </p>}
-          // mobileScreen={this.state.mobileScreen}
           illustration={collaborate}
         />
         <HomepageEAPSection
@@ -198,11 +190,20 @@ export default class Homepage extends React.PureComponent {
   }
 }
 
-const getIllustrationForHomepageEAPSection = (href, ide, illustration) => {
-  if (!!href)
-    return <a href={href} >
-      <img className={`illustration${ide ? ` ide` : ``}`} src={illustration} alt="" />
-    </a>;
+const getContentForHomepageEAPSection = (ide, illustration, mobileScreen) => {
+  if (!!ide)
+    return <div>
+      <a className="button" href={`vscode:extension/Kloudi.kloudi`} >
+        <img className={`illustration${ide ? ` ide` : ``}`}
+          src={illustration} />
+        <OutlineButton small={mobileScreen ? true : false}>
+          {`Install Extension`}
+        </OutlineButton>
+      </a>
+      <p>{`or download from `}
+        <a className="link" href={`https://marketplace.visualstudio.com/items?itemName=Kloudi.kloudi`}>{`Visual Studio Marketplace`}</a>
+      </p>
+    </div >;
   else
     return <img className={"illustration"} src={illustration} alt="" />;
 };
@@ -217,12 +218,12 @@ const HomepageEAPSection = props => {
             <article>{props.headingH5}</article>
           </div>
           {props.illustration ?
-            getIllustrationForHomepageEAPSection(
-              props.href, props.ide, props.illustration) :
+            getContentForHomepageEAPSection(
+              props.ide, props.illustration, props.mobileScreen) :
             <Link className="button" to={`/signup`} >
-              <PrimaryButton small={props.mobileScreen ? true : false}>
+              <OutlineButton small={props.mobileScreen ? true : false}>
                 {`Request Access`}
-              </PrimaryButton>
+              </OutlineButton>
             </Link>
           }
         </div>
@@ -237,7 +238,7 @@ const HomepageSection = props => {
         <div className="terminalIcon smallTerminalIcon">{`>_ `}</div>
         <div className="headingWrapper">
           <div className="headingH2">{props.headingH2}</div>
-          <div className="subheadingH5">
+          <div className="headingH5">
             <article>{props.headingH5}</article>
           </div>
           {props.illustration ?

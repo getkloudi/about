@@ -165,6 +165,11 @@
         @include clear-padding;
         text-align: center;
 
+        .link {
+          @include link-with-animated-border;
+          color: $link-hover-color;
+        }
+
         .textLogo {
           display: block;
           margin: 0 0;
@@ -269,10 +274,7 @@
         }
         .ide {
           width: 240px;
-          border: solid 2px #2193b0;
-          border-radius: 8px;
-          padding: 8px 16px;
-          background-color: #fff;
+          padding: 0 0 8px 0;
         }
         .button {
           button {
