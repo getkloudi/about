@@ -1,5 +1,6 @@
 @import './common/bootstrap-essentials';
 @import './common/input';
+@import './common/link';
 @import './common/mixins';
 @import './common/variables';
 
@@ -43,6 +44,9 @@
             max-width: 480px;
             font-size: $mobile-h5;
             padding: 0 16px;
+            article {
+              margin: 0 auto 8px 0;
+            }
           }
           .headingH6,
           .subheadingH6,
@@ -59,7 +63,7 @@
               .input {
                 display: none;
               }
-              .button {
+              .eap-button {
                 margin: 0 auto;
               }
             }
@@ -111,6 +115,9 @@
             max-width: 480px;
             font-size: $desktop-h5;
             padding: 0 0;
+            article {
+              margin: 0 auto 16px 0;
+            }
           }
           .headingH6,
           .subheadingH6,
@@ -131,7 +138,7 @@
                 display: block;
                 font-size: $desktop-h6;
               }
-              .button {
+              .eap-button {
                 margin: 0 0;
               }
             }
@@ -245,11 +252,13 @@
             .input {
               margin: 0 16px 0 0;
             }
-            .button {
-              div {
-                width: 160px;
+            .eap-button {
+              button {
+                div {
+                  width: 160px;
+                }
+                border-radius: 32px;
               }
-              border-radius: 32px;
             }
           }
         }
@@ -258,9 +267,18 @@
           width: 320px;
           margin: auto;
         }
+        .ide {
+          width: 240px;
+          border: solid 2px #2193b0;
+          border-radius: 8px;
+          padding: 8px 16px;
+          background-color: #fff;
+        }
         .button {
-          margin: 16px auto;
-          border-radius: 32px;
+          button {
+            margin: 16px auto;
+            border-radius: 32px;
+          }
         }
       }
     }

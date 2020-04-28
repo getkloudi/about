@@ -74,6 +74,11 @@
       &:hover {
         color: $primary-color;
       }
+      a {
+        &:hover {
+          color: $primary-color;
+        }
+      }
     }
 
     .button {

@@ -10,10 +10,7 @@ export default class HomepagePresenter extends Component {
   }
 
   onEAPSignUpClick = info => {
-    if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
-      window.location.href = `/signup${info && info.email ? `?email=${info.email}` : `/`}`;
-    if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-      window.location.href = `/signup${info && info.email ? `?email=${info.email}` : `/`}`;
+    navigate(`/signup${info && info.email ? `?email=${info.email}` : `/`}`);
   };
 
 

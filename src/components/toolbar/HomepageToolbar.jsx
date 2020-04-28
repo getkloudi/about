@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { navigate } from "gatsby";
 
 import Toolbar from "../toolbar/Toolbar";
 import MobileSideMenu from "../mobile-side-menu/MobileSideMenu";
@@ -23,6 +24,29 @@ export default class HomepageToolbar extends PureComponent {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
+
+  behindTheScenesHref = () => {
+    return "https://www.notion.so/Kloudi-Behind-the-Scenes-9f58a4c91f744dbda4816838589ad1aa";
+  };
+
+  whyEarlyAccessHref = () => {
+    return "https://www.notion.so/Kloudi-Why-Early-Access-Program-28fea6ae32fb41d4baa08e4787fa23b3";
+  };
+
+
+  eapSignUpHref = () => (`/signup`);
+
+  signInHref = () => {
+    if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
+      return `https://app-staging.kloudi.tech/login`;
+    if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
+      return `https://app.kloudi.tech/login`;
+  };
+
+  onToolbarHamburgerClicked() {
+    this.mobileSideMenu.toggle();
+  }
+
   updateWindowDimensions() {
     if (window.innerWidth < 960) {
       this.setState({ mobileScreen: true });
@@ -31,59 +55,34 @@ export default class HomepageToolbar extends PureComponent {
     }
   }
 
-  onToolbarHamburgerClicked() {
-    this.mobileSideMenu.toggle();
-  }
-
-  onEAPSignUpClick() {
-    if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
-      window.location.href = `/signup`;
-    if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-      window.location.href = `/signup`;
-  }
-
-  onSignInClick() {
-    if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
-      window.location.href = `https://app-staging.kloudi.tech/login`;
-    if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-      window.location.href = `https://app.kloudi.tech/login`;
-  }
-
   render() {
     const featuresVisibility = this.props.featuresVisibility;
     const signUpVisibility = this.props.signUpVisibility;
     const pricingVisibility = this.props.pricingVisibility;
 
-    if (!this.state.mobileScreen) {
-      return (
-        <div className={style.homepageToolbarContainer}>
-          <Toolbar
-            featuresVisibility={featuresVisibility}
-            signUpVisibility={signUpVisibility}
-            pricingVisibility={pricingVisibility}
-            onEAPSignUpClick={() => this.onEAPSignUpClick()}
-            onHamburgerClicked={() => this.onToolbarHamburgerClicked()}
-            onSignInClick={() => this.onSignInClick()} />
-        </div>
-      );
-    } else {
-      return (
-        <div className={style.homepageToolbarContainer}>
-          <Toolbar
-            featuresVisibility={featuresVisibility}
-            signUpVisibility={signUpVisibility}
-            pricingVisibility={pricingVisibility}
-            onEAPSignUpClick={() => this.onEAPSignUpClick()}
-            onHamburgerClicked={() => this.onToolbarHamburgerClicked()} onSignInClick={() => this.onSignInClick()} />
+    return (
+      <div className={style.homepageToolbarContainer}>
+        <Toolbar
+          behindTheScenesHref={this.behindTheScenesHref()}
+          eapSignUpHref={this.eapSignUpHref()}
+          featuresVisibility={featuresVisibility}
+          onHamburgerClicked={() => this.onToolbarHamburgerClicked()} pricingVisibility={pricingVisibility}
+          signInHref={this.signInHref()}
+          signUpVisibility={signUpVisibility}
+          whyEarlyAccessHref={this.whyEarlyAccessHref()}
+        />
+        {!this.state.mobileScreen ? `` :
           <MobileSideMenu
+            behindTheScenesHref={this.behindTheScenesHref()}
+            eapSignUpHref={this.eapSignUpHref()}
             featuresVisibility={featuresVisibility}
-            signUpVisibility={signUpVisibility}
             pricingVisibility={pricingVisibility}
-            onEAPSignUpClick={() => this.onEAPSignUpClick()}
-            onSignInClick={() => this.onSignInClick()}
-            ref={mobileSideMenu => { this.mobileSideMenu = mobileSideMenu; }} />
-        </div>
-      );
-    }
+            ref={mobileSideMenu => { this.mobileSideMenu = mobileSideMenu; }}
+            signInHref={this.signInHref()}
+            signUpVisibility={signUpVisibility}
+            whyEarlyAccessHref={this.whyEarlyAccessHref()}
+          />}
+      </div>
+    );
   }
 }

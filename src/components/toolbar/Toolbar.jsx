@@ -83,21 +83,45 @@ export default class Toolbar extends PureComponent {
               : { display: "none" }
             }
           >
-            <div onClick={_ => this.props.onSignInClick()}>SIGN IN</div>
+            <a href={this.props.behindTheScenesHref}>
+              {`BEHIND THE SCENES`}
+            </a>
           </div>
 
           <div
+            className={style.item}
             style={!this.state.mobileScreen
               ? { display: "inline-block" }
               : { display: "none" }
             }
-            onClick={_ => this.props.onEAPSignUpClick()} >
+          >
+            <a href={this.props.whyEarlyAccessHref}>
+              {`WHY EARLY ACCESS?`}
+            </a>
+          </div>
+
+          <div
+            className={style.item}
+            style={!this.state.mobileScreen
+              ? { display: "inline-block" }
+              : { display: "none" }
+            }
+          >
+            <a href={this.props.signInHref}>SIGN IN</a>
+          </div>
+
+          <Link
+            style={!this.state.mobileScreen
+              ? { display: "inline-block" }
+              : { display: "none" }
+            }
+            to={this.props.eapSignUpHref} >
             <PrimaryButton
               className={style.button}
               small="true">
               Get Early Access
               </PrimaryButton>
-          </div>
+          </Link>
           <img
             src={hamburgerImg}
             className={style.hamburger}

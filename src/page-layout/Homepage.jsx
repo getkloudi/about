@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet as Head } from "react-helmet";
 import { Form, Input } from "reactstrap";
+import { Link } from "gatsby";
 
 import { PrimaryButton } from "../components/button";
 import Footer from "../components/footer/Footer";
@@ -11,6 +12,7 @@ import converse from "../images/converse.svg";
 import collate from "../images/collate.svg";
 import collaborate from "../images/collaborate.svg";
 import emailIcon from "../images/email.svg";
+import ideIcon from "../images/vscode-ide-illustration.png";
 
 import "../scss/homepage.scss";
 
@@ -92,13 +94,18 @@ export default class Homepage extends React.PureComponent {
                     type="email"
                     onChange={e => this.onInputChange("email", e.target.value)}
                   />
-                  <PrimaryButton
-                    className="button"
-                    onClick={_ => this.props.onEAPSignUpClick()}
-                    small={this.state.mobileScreen ? true : false}
-                  >
-                    {`Get Early Access`}
-                  </PrimaryButton>
+                  <Link
+                    className="eap-button"
+                    to={`/signup${!!this.state.email ?
+                      `?email=${this.state.email}` :
+                      `/`}`}>
+                    <PrimaryButton
+                      onClick={_ => this.props.onEAPSignUpClick()}
+                      small={this.state.mobileScreen ? true : false}
+                    >
+                      {`Get Early Access`}
+                    </PrimaryButton>
+                  </Link>
                 </div>
                 <input
                   type="submit"
@@ -114,25 +121,22 @@ export default class Homepage extends React.PureComponent {
             </div>
           </div>
         </div>
-        <div className="contentWrapper" style={{ background: "#fafafa" }}>
-          <div className="content">
-            <div className="headingWrapper">
-              <div className="headingH2">
-                {`Zero navigation for all your actions`}
-              </div>
-              <div className="headingH5">
-                <p >{`Enabling cross-functionality of your tools to give you connected, enriched and actionable data.`}
-                </p>
-                <p style={{ marginTop: "32px", marginBottom: "16px" }}>
-                  <span className="demibold">{`Now`}</span>
-                  {` present right in your `}
-                  <span className="demibold"> {`IDE`}
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HomepageEAPSection
+          headingH2={`Zero navigation for all your actions`}
+          headingH5={<span><p >{`Enabling cross-functionality of your tools to give you connected, enriched and actionable data.`}</p>
+            <p style={{ marginTop: "32px", marginBottom: "16px" }}>
+              <span className="demibold">{`Now`}</span>
+              {` present right in your `}
+              <span className="demibold"> {`IDE`}
+              </span>
+            </p>
+          </span>
+          }
+          href={`https://marketplace.visualstudio.com/items?itemName=Kloudi.kloudi`}
+          ide
+          illustration={ideIcon}
+          mobileScreen={this.state.mobileScreen}
+        />
         <HomepageSection
           headingH2={`Integrate all your tools at one place`}
           headingH5={<p>{`Easily plugin all tools to get a `}
@@ -141,7 +145,7 @@ export default class Homepage extends React.PureComponent {
             </span>
             {`view of all the data.`}
           </p>}
-          mobileScreen={this.state.mobileScreen}
+          // mobileScreen={this.state.mobileScreen}
           illustration={connect}
         />
         <HomepageSection
@@ -154,7 +158,7 @@ export default class Homepage extends React.PureComponent {
             </span>
             {`.`}
           </p>}
-          mobileScreen={this.state.mobileScreen}
+          // mobileScreen={this.state.mobileScreen}
           illustration={converse}
         />
         <HomepageSection
@@ -166,7 +170,7 @@ export default class Homepage extends React.PureComponent {
             </span>
             {`from all your tools.`}
           </p>}
-          mobileScreen={this.state.mobileScreen}
+          // mobileScreen={this.state.mobileScreen}
           illustration={collate}
         />
         <HomepageSection
@@ -178,7 +182,7 @@ export default class Homepage extends React.PureComponent {
             {`improve your team’s productivity by sharing  `}
             {`queries and help them automate workflows.`}
           </p>}
-          mobileScreen={this.state.mobileScreen}
+          // mobileScreen={this.state.mobileScreen}
           illustration={collaborate}
         />
         <HomepageEAPSection
@@ -194,6 +198,15 @@ export default class Homepage extends React.PureComponent {
   }
 }
 
+const getIllustrationForHomepageEAPSection = (href, ide, illustration) => {
+  if (!!href)
+    return <a href={href} >
+      <img className={`illustration${ide ? ` ide` : ``}`} src={illustration} alt="" />
+    </a>;
+  else
+    return <img className={"illustration"} src={illustration} alt="" />;
+};
+
 const HomepageEAPSection = props => {
   return (
     <div className="contentWrapper" style={{ background: "#fafafa" }}>
@@ -201,18 +214,17 @@ const HomepageEAPSection = props => {
         <div className="headingWrapper">
           <div className="headingH2">{props.headingH2}</div>
           <div className="headingH5">
-            <article style={props.mobileScreen ?
-              { marginBottom: "32px" } :
-              { marginBottom: "32px" }}
-            >{props.headingH5}</article>
+            <article>{props.headingH5}</article>
           </div>
-          <PrimaryButton
-            className="button"
-            onClick={_ => this.props.onEAPSignUpClick()}
-            small={props.mobileScreen ? true : false}
-          >
-            {`Request Access`}
-          </PrimaryButton>
+          {props.illustration ?
+            getIllustrationForHomepageEAPSection(
+              props.href, props.ide, props.illustration) :
+            <Link className="button" to={`/signup`} >
+              <PrimaryButton small={props.mobileScreen ? true : false}>
+                {`Request Access`}
+              </PrimaryButton>
+            </Link>
+          }
         </div>
       </div>
     </div>);
@@ -226,13 +238,12 @@ const HomepageSection = props => {
         <div className="headingWrapper">
           <div className="headingH2">{props.headingH2}</div>
           <div className="subheadingH5">
-            <article style={props.mobileScreen ?
-              { marginBottom: "32px" } :
-              { marginBottom: "32px" }}
-            >{props.headingH5}</article>
+            <article>{props.headingH5}</article>
           </div>
           {props.illustration ?
-            <img className={"illustration"} src={props.illustration} alt="" /> :
+            <img
+              className={"illustration"}
+              src={props.illustration} alt="" /> :
             ``}
         </div>
       </div>

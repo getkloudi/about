@@ -92,6 +92,12 @@
               margin: auto auto;
               border-bottom: solid 1px $primary-color;
             }
+
+            a {
+              color: $primary-color;
+              border-bottom: solid 1px $primary-color;
+              margin: auto auto;
+            }
           }
         }
       }

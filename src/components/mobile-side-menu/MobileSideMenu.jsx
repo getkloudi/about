@@ -82,6 +82,29 @@ export default class MobileSideMenu extends PureComponent {
                 >
                   <Link to="/price-estimator">PRICING</Link>
                 </div>
+
+                <div
+                  className={style.item}
+                  style={!this.state.mobileScreen
+                    ? { display: "flex" }
+                    : { display: "none" }}
+                >
+                  <a href={this.props.behindTheScenesHref}>
+                    {`BEHIND THE SCENES`}
+                  </a>
+                </div>
+
+                <div
+                  className={style.item}
+                  style={!this.state.mobileScreen
+                    ? { display: "flex" }
+                    : { display: "none" }}
+                >
+                  <a href={this.props.whyEarlyAccessHref}>
+                    {`WHY EARLY ACCESS?`}
+                  </a>
+                </div>
+
                 <div
                   className={style.item}
                   style={!this.state.mobileScreen
@@ -89,22 +112,22 @@ export default class MobileSideMenu extends PureComponent {
                     : { display: "none" }
                   }
                 >
-                  <div onClick={_ => this.props.onSignInClick()}>SIGN IN</div>
+                  <a href={this.props.signInHref}>SIGN IN</a>
                 </div>
               </div>
-              <div
+              <Link
                 className={style.actionButtons}
                 style={!this.state.mobileScreen
                   ? { display: "flex" }
                   : { display: "none" }
                 }
-                onClick={_ => this.props.onEAPSignUpClick()} >
+                to={this.props.eapSignUpHref} >
                 <PrimaryButton
                   className={style.buttons}
                   small="true">
                   Get Early Access
               </PrimaryButton>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
