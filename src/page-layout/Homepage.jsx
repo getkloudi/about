@@ -87,7 +87,7 @@ export default class Homepage extends React.PureComponent {
                     { border: "none", padding: "0 0" } :
                     {}}
                 >
-                  <img src={emailIcon} alt="Email icon" className="img" />
+                  <img src={emailIcon} alt="Enter work email" className="img" />
                   <Input
                     className="input"
                     placeholder="Work Email"
@@ -194,7 +194,8 @@ const getContentForHomepageEAPSection = (ide, illustration, mobileScreen) => {
   if (!!ide)
     return <div>
       <a className="button" href={`vscode:extension/Kloudi.kloudi`} >
-        <img className={`illustration${ide ? ` ide` : ``}`}
+        <img alt={`Install Visual Studio Extension`}
+          className={`illustration${ide ? ` ide` : ``}`}
           src={illustration} />
         <OutlineButton small={mobileScreen ? true : false}>
           {`Install Extension`}
