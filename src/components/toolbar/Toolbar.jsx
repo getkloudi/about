@@ -22,7 +22,7 @@ export default class Toolbar extends PureComponent {
     window.addEventListener("resize", this.updateWindowDimensions);
   }
 
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
     window.removeEventListener("resize", this.updateWindowDimensions);
   }
 

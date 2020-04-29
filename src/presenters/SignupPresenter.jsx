@@ -18,9 +18,6 @@ export default class SignupPresenter extends Component {
     };
     this.clearError = this.clearError.bind(this);
   }
-  componentDidMount() { }
-
-  componentWillUnmount() { }
 
   showLoading() {
     if (!this.state.isLoading) {

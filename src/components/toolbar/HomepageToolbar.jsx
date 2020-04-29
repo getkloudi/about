@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, useState } from "react";
 import { navigate } from "gatsby";
 
 import Toolbar from "../toolbar/Toolbar";
@@ -10,7 +10,7 @@ export default class HomepageToolbar extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      mobileScreen: false,
+      mobileScreen: true,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
@@ -20,7 +20,7 @@ export default class HomepageToolbar extends PureComponent {
     window.addEventListener('resize', this.updateWindowDimensions);
   }
 
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
@@ -59,6 +59,7 @@ export default class HomepageToolbar extends PureComponent {
     const featuresVisibility = this.props.featuresVisibility;
     const signUpVisibility = this.props.signUpVisibility;
     const pricingVisibility = this.props.pricingVisibility;
+    console.log(this.state.mobileScreen);
 
     return (
       <div className={style.homepageToolbarContainer}>

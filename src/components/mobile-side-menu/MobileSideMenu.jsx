@@ -20,7 +20,7 @@ export default class MobileSideMenu extends PureComponent {
     window.addEventListener("animationend", this.updateSideMenuState);
   }
 
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
     window.removeEventListener("animationend", this.updateSideMenuState);
   }
 
