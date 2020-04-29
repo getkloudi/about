@@ -12,7 +12,7 @@ export default class Toolbar extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      mobileScreen: false
+      mobileScreen: true
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
