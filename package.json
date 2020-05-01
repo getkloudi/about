@@ -57,8 +57,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0 -p 3001",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
+    "start": "gatsby build && gatsby serve -H 0.0.0.0 -p 3001",
+    "prod": "npm run start",
+    "serve": "gatsby serve -H 0.0.0.0 -p 3001",
     "deploy": "gatsby build --staging&& rsync -a public/ ubuntu@staging.kloudi.tech:~/deploy/dist/ --delete",
     "production": "gatsby build && rm public/robots.txt && firebase deploy --token=$FIREBASE_DEPLOY_TOKEN",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
