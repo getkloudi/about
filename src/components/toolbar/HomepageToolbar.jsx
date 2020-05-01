@@ -37,9 +37,9 @@ export default class HomepageToolbar extends PureComponent {
   eapSignUpHref = () => (`/signup`);
 
   signInHref = () => {
-    if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
+    if (process.env.TARGET_ENV !== "production")
       return `https://app-staging.kloudi.tech/login`;
-    if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
+    if (process.env.TARGET_ENV === "production")
       return `https://app.kloudi.tech/login`;
   };
 
@@ -59,7 +59,6 @@ export default class HomepageToolbar extends PureComponent {
     const featuresVisibility = this.props.featuresVisibility;
     const signUpVisibility = this.props.signUpVisibility;
     const pricingVisibility = this.props.pricingVisibility;
-    console.log(this.state.mobileScreen);
 
     return (
       <div className={style.homepageToolbarContainer}>
