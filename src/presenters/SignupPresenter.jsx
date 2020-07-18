@@ -40,7 +40,12 @@ export default class SignupPresenter extends Component {
       this.showLoading();
       try {
         await authRepository.signUp(info);
-        this.setState({ userInfoForThankYou: info });
+        const email = info.email;
+        const firstName = info.name.split(' ')[0];
+        if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
+          window.location.href = `https://kloudi.typeform.com/to/sGwIjM?email=${email}&name=${firstName}`;
+        if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
+          window.location.href = `https://kloudi.typeform.com/to/gCqGrQ?email=${email}&name=${firstName}`;
       } catch (err) {
         this.setState({
           error: err.response.data.message
