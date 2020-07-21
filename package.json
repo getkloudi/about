@@ -15,7 +15,7 @@
     "eventemitter2": "^6.3.1",
     "file-loader": "^1.1.6",
     "ganalytics": "^3.1.2",
-    "gatsby": "^2.20.11",
+    "gatsby": "^2.24.7",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-client-side-redirect": "^1.1.0",
     "gatsby-plugin-env-variables": "^1.0.1",
