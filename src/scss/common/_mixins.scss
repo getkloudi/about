@@ -198,7 +198,7 @@
 }
 
 @mixin plan-name {
-  font-family: 'AvenirNext';
+  font-family: 'Nunito Sans';
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -207,7 +207,7 @@
 }
 
 @mixin plan-pricing {
-  font-family: 'Futura';
+  font-family: 'Lato';
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -218,7 +218,7 @@
   @include flex-column-center;
   justify-content: center;
   .text {
-    font-family: 'AvenirNext';
+    font-family: 'Nunito Sans';
     font-style: normal;
     font-stretch: normal;
     color: $secondary-text-color;

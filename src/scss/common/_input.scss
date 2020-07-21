@@ -16,7 +16,7 @@
   @include clear();
   @include flex-row-center();
   height: 20px;
-  font-family: 'AvenirNext';
+  font-family: 'Nunito Sans';
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -52,7 +52,7 @@
 }
 
 @mixin text-input {
-  font-family: 'AvenirNext';
+  font-family: 'Nunito Sans';
   line-height: 28px;
   font-size: 20px;
   font-weight: normal;
@@ -131,7 +131,7 @@
     @include clear();
     @include flex-row-center();
     height: 20px;
-    font-family: 'AvenirNext';
+    font-family: 'Nunito Sans';
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -146,19 +146,19 @@
 
   ::-moz-placeholder {
     color: #9b9b9b;
-    font-family: 'AvenirNext';
+    font-family: 'Nunito Sans';
     padding-left: 2px;
   }
 
   ::placeholder {
     color: #9b9b9b;
-    font-family: 'AvenirNext';
+    font-family: 'Nunito Sans';
     padding-left: 2px;
   }
 
   :-ms-input-placeholder {
     color: #9b9b9b;
-    font-family: 'AvenirNext';
+    font-family: 'Nunito Sans';
     padding-left: 2px;
   }
 }

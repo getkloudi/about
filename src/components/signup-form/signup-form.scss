@@ -18,7 +18,7 @@
     }
     .header-greeting {
       @include clear();
-      font-family: 'AvenirNext';
+      font-family: 'Nunito Sans';
       font-weight: 600;
       font-size: 24px;
       color: $heading-text-color;
@@ -28,7 +28,7 @@
     .header-message {
       @include clear();
       display: inline-block;
-      font-family: 'AvenirNext';
+      font-family: 'Nunito Sans';
       font-size: 24px;
       text-align: center;
       color: $heading-text-color;
@@ -98,7 +98,7 @@
     .footer-message {
       width: 300px;
       height: 44px;
-      font-family: AvenirNext;
+      font-family: Nunito Sans;
       font-size: $standard-text-size;
       font-weight: 600;
       letter-spacing: normal;
@@ -118,7 +118,7 @@
       width: 300px;
     }
     .signup-placeholder {
-      font-family: AvenirNext;
+      font-family: Nunito Sans;
       font-size: $standard-text-size;
       font-weight: 600;
       letter-spacing: normal;
