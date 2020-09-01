@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { Link } from "gatsby";
 import { PrimaryButton } from "../button/";
 
-import logoImg from "../../images/logo.png";
+import logoImg from "../../images/logo.webp";
 import closeImg from "./assets/close.svg";
 
 import style from "./mobile-side-menu.module.scss";

@@ -2,8 +2,8 @@ import React, { PureComponent } from "react";
 import { Form, Input } from "reactstrap";
 
 //Image assets
-import textLogo from "./assets/kloudi-signup-logo.svg";
-import logo from "../../images/logo.png";
+import textLogo from "./assets/kloudi-signup-logo.webp";
+import logo from "../../images/logo.webp";
 import emailIcon from "../../images/email.svg";
 import nameIcon from "../../images/name.svg";
 

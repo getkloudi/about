@@ -3,7 +3,7 @@ import React, { PureComponent } from "react";
 import { PrimaryButton } from "../button";
 
 import textLogo from "./assets/kloudi-signup-logo.svg";
-import logo from "../../images/happy-logo.png";
+import logo from "../../images/happy-logo.webp";
 
 import style from "./thankyou-signup.module.scss";
 import { TwitterButton, NotionButton } from "../button/Button";

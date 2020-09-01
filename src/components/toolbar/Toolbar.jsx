@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { Link, navigate } from "gatsby";
 
-import logoImg from "../../images/logo.png";
+import logoImg from "../../images/logo.webp";
 import hamburgerImg from "./assets/hamburger.svg";
 
 import { PrimaryButton, OutlineButton } from "../button";
