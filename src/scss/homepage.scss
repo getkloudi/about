@@ -1,8 +1,8 @@
-@import './common/bootstrap-essentials';
-@import './common/input';
-@import './common/link';
-@import './common/mixins';
-@import './common/variables';
+@import "./common/bootstrap-essentials";
+@import "./common/input";
+@import "./common/link";
+@import "./common/mixins";
+@import "./common/variables";
 
 .homePage {
   @include make-container();
@@ -33,6 +33,10 @@
           .headingH2,
           .subheadingH2 {
             font-size: 32px;
+          }
+          .headingH3,
+          .subheadingH3 {
+            font-size: 24px;
           }
           .headingH4,
           .subheadingH4 {
@@ -102,6 +106,11 @@
             @include clear-padding;
             font-size: 48px;
           }
+          .headingH3,
+          .subheadingH3 {
+            @include clear-padding;
+            font-size: 36px;
+          }
           .headingH4,
           .subheadingH4 {
             @include clear-padding;
@@ -158,7 +167,7 @@
         -webkit-text-fill-color: transparent;
         opacity: 0.8;
         cursor: default;
-        font-family: 'Lato';
+        font-family: "Lato";
         font-weight: 600;
       }
       .headingWrapper {
@@ -179,17 +188,23 @@
           @include flex-row-justify-center;
           color: $primary-text-color;
           cursor: default;
-          font-family: 'Lato';
+          font-family: "Lato";
         }
         .headingH2 {
           @include flex-row-justify-center;
           color: $primary-text-color;
           cursor: default;
-          font-family: 'Lato';
+          font-family: "Lato";
+        }
+        .headingH3 {
+          @include flex-row-justify-center;
+          color: $primary-text-color;
+          cursor: default;
+          font-family: "Lato";
         }
         .headingH5 {
           @include flex-column-justify-center;
-          font-family: 'Nunito Sans';
+          font-family: "Nunito Sans";
           font-weight: normal;
           color: $primary-text-color;
           margin: 0 auto;
@@ -206,13 +221,13 @@
           @include flex-row-justify-center;
           color: $secondary-text-color;
           cursor: default;
-          font-family: 'Nunito Sans';
+          font-family: "Nunito Sans";
           font-weight: normal;
           margin: 16px 0 0 0;
         }
         .subheadingH5 {
           @include flex-column-justify-center;
-          font-family: 'Nunito Sans';
+          font-family: "Nunito Sans";
           font-weight: normal;
           color: $secondary-text-color;
           margin: 0 auto;
@@ -228,7 +243,7 @@
         .defaultText {
           @include flex-row-justify-center;
           position: relative;
-          font-family: 'Nunito Sans';
+          font-family: "Nunito Sans";
           font-weight: 500;
           color: $primary-text-color;
         }

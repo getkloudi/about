@@ -55,14 +55,29 @@ export default class Homepage extends React.PureComponent {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="homePage">
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <title>{`Kloudi - Take control of your tools`}</title>
+          <title>
+            {`Kloudi - World's simplest terminal for your daily workflows.`}
+          </title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />
+          {/* <!-- SEO --> */}
+          <meta name="application-name" content="Kloudi" />
+          <meta name="description" content="Kloudi is an NLP terminal that brings all your tools under one roof, enabling every developer to access all their tools, its data and actions from one place. All of this ease without learning any command or leaving your editor." />
+          {/* <!-- open graph and twitter tags --> */}
+          <meta property="og:site_name" content="Kloudi" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Kloudi - World's simplest terminal for your daily workflows." />
+          <meta property="og:description" content="Kloudi is an NLP terminal that brings all your tools under one roof, enabling every developer to access all their tools, its data and actions from one place. All of this ease without learning any command or leaving your editor." />
+          <meta property="og:image" content="https://kloudi.tech/logo.svg" />
+          <meta property="og:image:width" content="512" />
+          <meta property="og:image:height" content="512" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@KloudiTech" />
+          <meta name="twitter:alt" content="Kloudi - World's simplest terminal for your daily workflows." />
         </Head>
         <HomepageToolbar signUpVisibility={false} />
         <div
@@ -72,11 +87,11 @@ export default class Homepage extends React.PureComponent {
             { marginTop: "128px", marginBottom: "64px" }
           }>
           <div className="content">
-            <div className="terminalIcon">{`>_ `}</div>
+            <div className="terminalIcon">{`> _`}</div>
             <div className="headingWrapper">
-              <div className="headingH1">
-                {`Take Control of All your Tools`}
-              </div>
+              <div className="headingH3">
+                {`World's simplest terminal for your daily workflows`}
+              </div >
               <div className="subheadingH4">
                 {`A seamless workflow designed to get the most out of your development experience`}
               </div>
@@ -118,9 +133,9 @@ export default class Homepage extends React.PureComponent {
                   tabIndex="-1"
                 />
               </Form>
-            </div>
-          </div>
-        </div>
+            </div >
+          </div >
+        </div >
         <HomepageEAPSection
           headingH2={`Zero navigation for all your actions`}
           headingH5={<span><p>{`Enabling cross-functionality of your tools to give you connected, enriched and actionable data.`}</p>
