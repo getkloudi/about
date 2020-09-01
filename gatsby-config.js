@@ -64,16 +64,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Nunito Sans\:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i`,
-          `Lato\:100,100i,300,300i,400,400i,700,700i,900,900i`,
-        ],
-        display: "swap",
-      },
-    },
-    {
       resolve: "gatsby-plugin-preconnect",
       options: {
         domains: [
