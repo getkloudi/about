@@ -1,6 +1,6 @@
-var targetEnv = process.env.TARGET_ENV || process.env.NODE_ENV || 'development';
-const path = require('path');
-require('dotenv').config({
+var targetEnv = process.env.TARGET_ENV || process.env.NODE_ENV || "development";
+const path = require("path");
+require("dotenv").config({
   path: path.resolve(`.env`),
   debug: process.env.DEBUG,
 });
@@ -38,12 +38,12 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-sentry',
+      resolve: "gatsby-plugin-sentry",
       options: {
         dsn:
-          ['production', 'staging'].indexOf(targetEnv) !== -1
-            ? eval(`process.env.${targetEnv.toUpperCase()}_SENTRY_DSN`) || ''
-            : '',
+          ["production", "staging"].indexOf(targetEnv) !== -1
+            ? eval(`process.env.${targetEnv.toUpperCase()}_SENTRY_DSN`) || ""
+            : "",
         environment: targetEnv,
         autoBreadcrumbs: {
           console: true, // console logging
@@ -54,18 +54,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        whitelist: [
-          'CHATWOOT_WEBSITE_TOKEN',
-          'GATSBY_API_URL',
-          'PLATFORM',
-          'TARGET_ENV',
-        ],
+        whitelist: ["GATSBY_API_URL", "PLATFORM", "TARGET_ENV"],
       },
     },
     {
       resolve: `gatsby-plugin-fullstory`,
       options: {
-        fs_org: 'WEXVY',
+        fs_org: "WEXVY",
       },
     },
     {
@@ -75,7 +70,17 @@ module.exports = {
           `Nunito Sans\:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i`,
           `Lato\:100,100i,300,300i,400,400i,700,700i,900,900i`,
         ],
-        display: 'swap',
+        display: "swap",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: [
+          "https://d3kv0gsk1hy8nz.cloudfront.net/",
+          "https://fonts.gstatic.com",
+          "https://rs.fullstory.com",
+        ],
       },
     },
   ],
