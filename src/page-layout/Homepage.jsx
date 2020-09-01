@@ -77,6 +77,7 @@ export default class Homepage extends React.PureComponent {
           <meta property="og:image:height" content="512" />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@KloudiTech" />
+          <meta name="twitter:image" content="https://kloudi.tech/logo.png" />
           <meta name="twitter:alt" content="Kloudi - World's simplest terminal for your daily workflows." />
         </Head>
         <HomepageToolbar signUpVisibility={false} />
