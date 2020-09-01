@@ -55,7 +55,6 @@ export default class Homepage extends React.PureComponent {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="homePage">
         <Head>
