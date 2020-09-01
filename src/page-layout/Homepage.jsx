@@ -66,13 +66,13 @@ export default class Homepage extends React.PureComponent {
           <meta charSet="utf-8" />
           {/* <!-- SEO --> */}
           <meta name="application-name" content="Kloudi" />
-          <meta name="description" content="Kloudi is an NLP terminal that brings all your tools under one roof, enabling every developer to access all their tools, its data and actions from one place. All of this ease without learning any command or leaving your editor." />
+          <meta name="description" content="Kloudi is an NLP terminal that brings all the data and actions from your day-to-day tools at one place. All of this ease without learning any command or leaving your editor." />
           {/* <!-- open graph and twitter tags --> */}
           <meta property="og:site_name" content="Kloudi" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Kloudi - World's simplest terminal for your daily workflows." />
-          <meta property="og:description" content="Kloudi is an NLP terminal that brings all your tools under one roof, enabling every developer to access all their tools, its data and actions from one place. All of this ease without learning any command or leaving your editor." />
-          <meta property="og:image" content="https://kloudi.tech/logo.svg" />
+          <meta property="og:description" content="Kloudi is an NLP terminal that brings all the data and actions from your day-to-day tools at one place. All of this ease without learning any command or leaving your editor." />
+          <meta property="og:image" content="https://kloudi.tech/logo.png" />
           <meta property="og:image:width" content="512" />
           <meta property="og:image:height" content="512" />
           <meta name="twitter:card" content="summary" />
