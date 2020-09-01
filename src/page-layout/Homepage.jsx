@@ -58,9 +58,6 @@ export default class Homepage extends React.PureComponent {
     return (
       <div className="homePage">
         <Head>
-          <title>
-            {`Kloudi - World's simplest terminal for your daily workflows.`}
-          </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           {/* <!-- SEO --> */}
@@ -72,12 +69,19 @@ export default class Homepage extends React.PureComponent {
           <meta property="og:title" content="Kloudi - World's simplest terminal for your daily workflows." />
           <meta property="og:description" content="Kloudi is an NLP terminal that brings all the data and actions from your day-to-day tools at one place. All of this ease without learning any command or leaving your editor." />
           <meta property="og:image" content="https://kloudi.tech/logo.png" />
-          <meta property="og:image:width" content="512" />
-          <meta property="og:image:height" content="512" />
+          <meta property="og:url" content="https://kloudi.tech/" />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@KloudiTech" />
           <meta name="twitter:image" content="https://kloudi.tech/logo.png" />
           <meta name="twitter:alt" content="Kloudi - World's simplest terminal for your daily workflows." />
+          <title>
+            {`Kloudi - World's simplest terminal for your daily workflows.`}
+          </title>
+          {/* <!-- Web App Icons --> */}
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta name="apple-mobile-web-app-title" content="Kloudi" />
         </Head>
         <HomepageToolbar signUpVisibility={false} />
         <div
