@@ -29,7 +29,7 @@ export const PrimaryButton = props => (
     color="primary"
   >
     <div className={buttonStyles.text}>{props.children}</div>
-    <img src={arrowImg} />
+    <img alt="" src={arrowImg} />
   </Button>
 );
 
@@ -194,7 +194,7 @@ export const TwitterButton = props => (
       } ${buttonStyles.btn} ${buttonStyles.btnTwitter}`}
     color="primary"
   >
-    <img src={twitterImg} />
+    <img alt="" src={twitterImg} />
     <div className={buttonStyles.text}>{`Follow @KloudiTech`}</div>
   </Button>
 );
@@ -207,7 +207,7 @@ export const NotionButton = props => (
       } ${buttonStyles.btn} ${buttonStyles.btnNotion}`}
     color="primary"
   >
-    <img src={notionImg} />
+    <img alt="Read More about Kloudi on Notion" src={notionImg} />
     <div className={buttonStyles.text}>{props.children}</div>
   </Button>
 );

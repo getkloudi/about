@@ -68,14 +68,14 @@ class Footer extends PureComponent {
             <img
               className={style.socialIcon}
               src={twitterImg}
-              alt="Kloudi twitter icon"
+              alt="Follow Kloudi on Twitter at @KloudiTech"
             />
           </a>
           <a href="https://www.linkedin.com/company/kloudi/" target="_blank">
             <img
               className={style.socialIcon}
               src={linkedinImg}
-              alt="Kloudi LinkedIn icon"
+              alt="Follow Kloudi on Linked"
             />
           </a>
           {/* <a href="https://www.instagram.com/kloudi.tech/" target="_blank">

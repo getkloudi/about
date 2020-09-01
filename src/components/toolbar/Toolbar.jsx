@@ -47,6 +47,7 @@ export default class Toolbar extends PureComponent {
       <div className={style.toolbarWrapper}>
         <div className={style.toolbar}>
           <img
+            alt="Goto homepage"
             src={logoImg}
             className={style.logo}
             onClick={_ => this.onHomeNavClick()}
@@ -123,6 +124,7 @@ export default class Toolbar extends PureComponent {
               </PrimaryButton>
           </Link>
           <img
+            alt=""
             src={hamburgerImg}
             className={style.hamburger}
             onClick={_ => this.props.onHamburgerClicked()}

@@ -34,7 +34,7 @@ export default class ThankyouForSignup extends PureComponent {
     return (
       <div className={style.container}>
         <div className={style.header}>
-          <img src={logo} alt="Kloudi" className={style.logo} />
+          <img src={logo} alt="Thank you for signing up on Kloudi" className={style.logo} />
           <div className={style.greeting}>{`Awesome${firstName ? ` ${firstName}` : ``}!`}</div>
           <div className={style.message}>
             {`We have you on the waitlist for access 🗒`}
@@ -67,7 +67,7 @@ export default class ThankyouForSignup extends PureComponent {
           <img
             className={style.logo}
             src={textLogo}
-            alt="Logo"
+            alt=""
           />
         </div>
       </div >

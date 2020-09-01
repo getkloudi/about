@@ -61,10 +61,10 @@ export default class MobileSideMenu extends PureComponent {
       <div className={style.mobileSideMenuContainer}>
         <div className={`${style.mobileSideMenu} ${this.state.sideMenuVisibility}`}>
           <div className={style.topbar}>
-            <img src={logoImg} className={style.logo} />
+            <img alt="" src={logoImg} className={style.logo} />
             <div className={style.filler} />
             <div className={style.close} onClick={() => this.sideMenuClosed()}>
-              <img src={closeImg} />
+              <img alt="" src={closeImg} />
             </div>
           </div>
           <div className={style.wrapper}>

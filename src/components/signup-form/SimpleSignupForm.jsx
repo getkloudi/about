@@ -52,14 +52,14 @@ export default class SimpleSignupForm extends PureComponent {
     return (
       <div className="signup-form">
         <div className="signup-header">
-          <img src={logo} alt="Kloudi" className="header-logo" />
+          <img src={logo} alt="Signup on Kloudi" className="header-logo" />
           <div className="header-greeting">{`Hey${this.state.name && this.state.name.length > 0 ? ` ${this.getFirstName(this.state.name)}` : ``} 👋🏼!`}</div>
           <div className="header-message">{`Let's get you in the queue for Early Access.`}</div>
         </div>
         <Form className="form-page" onSubmit={e => this.onFormSubmit(e)}>
 
           <div className={"input-wrapper"}>
-            <img src={emailIcon} alt="Email icon" className="img" />
+            <img src={emailIcon} alt="Work Email" className="img" />
             <Input
               className="input"
               placeholder="Work Email"
@@ -69,7 +69,7 @@ export default class SimpleSignupForm extends PureComponent {
             />
           </div>
           <div className={"input-wrapper"}>
-            <img src={nameIcon} alt="Name icon" className="img" />
+            <img src={nameIcon} alt="Full Name" className="img" />
             <Input
               className="input"
               placeholder="Your Full Name"
@@ -114,7 +114,7 @@ export default class SimpleSignupForm extends PureComponent {
           <img
             className="footer-logo"
             src={textLogo}
-            alt="Logo"
+            alt=""
           />
         </div>
       </div>

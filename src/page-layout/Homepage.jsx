@@ -194,7 +194,7 @@ const getContentForHomepageEAPSection = (ide, illustration, mobileScreen) => {
   if (!!ide)
     return <div>
       <a className="button" href={`vscode:extension/Kloudi.kloudi`} >
-        <img alt={`Install Visual Studio Extension`}
+        <img alt={`Install Kloudi's VSCode Extension`}
           className={`illustration${ide ? ` ide` : ``}`}
           src={illustration} />
         <OutlineButton small={mobileScreen ? true : false}>
@@ -245,7 +245,7 @@ const HomepageSection = props => {
           {props.illustration ?
             <img
               className={"illustration"}
-              src={props.illustration} alt="" /> :
+              src={props.illustration} alt={props.headingH2} /> :
             ``}
         </div>
       </div>
