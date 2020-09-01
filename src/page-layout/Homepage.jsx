@@ -12,7 +12,6 @@ import converse from "../images/converse.svg";
 import collate from "../images/collate.svg";
 import collaborate from "../images/collaborate.svg";
 import emailIcon from "../images/email.svg";
-import ideIcon from "../images/vscode-ide-illustration.webp";
 
 import "../scss/homepage.scss";
 
@@ -149,7 +148,7 @@ export default class Homepage extends React.PureComponent {
           </span>
           }
           ide
-          illustration={ideIcon}
+          illustration={`https://kloudi.tech/kloudi-in-vscode.png`}
           mobileScreen={this.state.mobileScreen}
         />
         <HomepageSection
