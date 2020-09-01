@@ -6,7 +6,7 @@ before_script:
   ##
   - apt-get update -y
   - apt-get install rsync -y
-  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
 
   ##
   ## Run ssh-agent (inside the build environment)
@@ -51,8 +51,6 @@ staging:
     - export GATSBY_API_URL=https://api-staging.kloudi.tech
     - export PLATFORM=WEB
     - npm run build
-    - ssh-add <(echo "$STAGING_SSH_KEY")
-    - rsync -a public/ ubuntu@staging.kloudi.tech:~/deploy/dist/ --delete
 
 production:
   type: deploy
@@ -66,5 +64,3 @@ production:
     - export CHATWOOT_WEBSITE_TOKEN=$CHATWOOT_WEBSITE_TOKEN
     - export PLATFORM=WEB
     - npm run build
-    - npm install -g firebase-tools
-    - firebase deploy --token "$FIREBASE_TOKEN" --only hosting:kloudteam-homepage
