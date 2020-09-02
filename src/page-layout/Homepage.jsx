@@ -65,7 +65,7 @@ export default class Homepage extends React.PureComponent {
           {/* <!-- open graph and twitter tags --> */}
           <meta property="og:site_name" content="Kloudi" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Simplest terminal for your workflow" />
+          <meta property="og:title" content="Kloudi - World's simplest terminal for your daily workflows" />
           <meta property="og:description" content="Kloudi is an NLP terminal that brings all the data and actions from your tools at one place. All of this ease without learning any command or leaving your editor." />
           <meta property="og:image" content="https://kloudi.tech/happy-logo.png" />
           <meta property="og:url" content="https://kloudi.tech/" />
