@@ -3,7 +3,7 @@ import { Form, Input } from "reactstrap";
 
 //Image assets
 import textLogo from "./assets/kloudi-signup-logo.webp";
-import logo from "../../imageslogo.svg";
+import logo from "../../images/logo.svg";
 import emailIcon from "../../images/email.svg";
 import nameIcon from "../../images/name.svg";
 
