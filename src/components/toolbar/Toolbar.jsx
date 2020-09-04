@@ -120,7 +120,7 @@ export default class Toolbar extends PureComponent {
             <PrimaryButton
               className={style.button}
               small="true">
-              Get Early Access
+              Sign Up
               </PrimaryButton>
           </Link>
           <img
