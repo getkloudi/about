@@ -68,7 +68,6 @@ module.exports = {
       options: {
         domains: [
           "https://d3kv0gsk1hy8nz.cloudfront.net/",
-          "https://fonts.gstatic.com",
           "https://rs.fullstory.com",
         ],
       },
