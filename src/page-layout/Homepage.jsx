@@ -94,7 +94,7 @@ export default class Homepage extends React.PureComponent {
             { marginTop: "64px", marginBottom: "64px" }
           }>
           <div className="content">
-            <img className="terminal" src={searchLogo} />
+            <img alt="" className="terminal" src={searchLogo} />
             <div className="h2 semi-bold ">{`No command terminal`}
             </div >
             <div className="h3 light">{`Connecting all your daily workflows`}</div >
@@ -188,7 +188,7 @@ const getContentForHomepageEAPSection = (ide, illustration, mobileScreen) => {
       </p>
     </div >;
   else
-    return <img className={"illustration"} src={illustration} alt="" />;
+    return <img className={""} src={illustration} alt="" />;
 };
 
 const HomepageEAPSection = props => {
@@ -222,7 +222,7 @@ const HomepageSection = props => {
       <div className="content">
         {props.emoji ?
           <div className="h2 emoji"><span>{props.emoji}</span></div> :
-          <img className="terminal" src={searchLogo}></img>
+          <img alt="" className="terminal" src={searchLogo} />
         }
         <div className="headingWrapper">
           <div className="h2 semi-bold">{props.h2}</div>
@@ -239,7 +239,7 @@ const HomepageSection = props => {
             src={props.mobileScreen ? props.mobileIllustration || props.illustration : props.illustration} /> :
           ``}
         {props.hint ? <div className="h6 hint">
-          <img className="hint-img" src={idea} />
+          <img alt="" className="hint-img" src={idea} />
           {`${props.hint}`}
         </div> : ""}
         {props.button ? <Link className="button" to={`/signup`} >
