@@ -20,7 +20,7 @@ export default class ThankyouForSignup extends PureComponent {
     if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
       window.location.href = `https://kloudi.typeform.com/to/cbTP1wgB?email=${email}&name=${firstName}`;
     if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-      window.location.href = `https://kloudi.typeform.com/to/gCqGrQ?email=${email}&name=${firstName}`;
+      window.location.href = `https://kloudi.typeform.com/to/bkOD88Rb?email=${email}&name=${firstName}`;
   };
 
   onNotionClick = e => {

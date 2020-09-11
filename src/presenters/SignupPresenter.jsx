@@ -45,7 +45,7 @@ export default class SignupPresenter extends Component {
         if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
           window.location.href = `https://kloudi.typeform.com/to/cbTP1wgB?email=${email}&name=${firstName}`;;
         if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
-          window.location.href = `https://kloudi.typeform.com/to/gCqGrQ?email=${email}&name=${firstName}`;
+          window.location.href = `https://kloudi.typeform.com/to/bkOD88Rb?email=${email}&name=${firstName}`;
       } catch (err) {
         this.setState({
           error: err.response.data.message
