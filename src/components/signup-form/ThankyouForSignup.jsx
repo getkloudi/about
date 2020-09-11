@@ -18,7 +18,7 @@ export default class ThankyouForSignup extends PureComponent {
     const email = this.props.userInfo ? this.props.userInfo.email : "";
     const firstName = name.split(" ")[0];
     if (typeof window !== `undefined` && process.env.TARGET_ENV !== "production")
-      window.location.href = `https://kloudi.typeform.com/to/sGwIjM?email=${email}&name=${firstName}`;
+      window.location.href = `https://kloudi.typeform.com/to/cbTP1wgB?email=${email}&name=${firstName}`;
     if (typeof window !== `undefined` && process.env.TARGET_ENV === "production")
       window.location.href = `https://kloudi.typeform.com/to/gCqGrQ?email=${email}&name=${firstName}`;
   };
