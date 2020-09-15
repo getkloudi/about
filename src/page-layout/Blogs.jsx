@@ -1,21 +1,24 @@
 import React from "react";
-import axios from 'axios';
 
+import "../scss/blogs.scss";
 
-const MY_DOMAIN = "kloudi.tech/blogs";
-const SLUG_TO_PAGE = {
-  "": "ef5448d503fb413c84406f51f5fe5682",
-  "/behind-the-scenes": "9f58a4c91f744dbda4816838589ad1aa",
-};
 
 export default class Blogs extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
-    return <div></div>;
+    return <div className="iframe-wrapper">
+      <iframe
+        className="iframe"
+        src="https://blog.kloudi.tech/embed/"
+        frameBorder="0"
+        sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"
+        allowFullScreen={true}
+        mozallowfullscreen="true"
+        webkitallowfullscreen="true" />
+    </div>;
   }
 }
