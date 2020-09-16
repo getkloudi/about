@@ -89,9 +89,9 @@ export default class MobileSideMenu extends PureComponent {
                     ? { display: "flex" }
                     : { display: "none" }}
                 >
-                  <a href={this.props.behindTheScenesHref}>
+                  <Link to="/blog/behind-the-scenes">
                     {`BEHIND THE SCENES`}
-                  </a>
+                  </Link>
                 </div>
 
                 <div

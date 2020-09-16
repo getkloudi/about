@@ -63,7 +63,6 @@ export default class HomepageToolbar extends PureComponent {
     return (
       <div className={style.homepageToolbarContainer}>
         <Toolbar
-          behindTheScenesHref={this.behindTheScenesHref()}
           eapSignUpHref={this.eapSignUpHref()}
           featuresVisibility={featuresVisibility}
           onHamburgerClicked={() => this.onToolbarHamburgerClicked()} pricingVisibility={pricingVisibility}
@@ -73,7 +72,6 @@ export default class HomepageToolbar extends PureComponent {
         />
         {!this.state.mobileScreen ? `` :
           <MobileSideMenu
-            behindTheScenesHref={this.behindTheScenesHref()}
             eapSignUpHref={this.eapSignUpHref()}
             featuresVisibility={featuresVisibility}
             pricingVisibility={pricingVisibility}

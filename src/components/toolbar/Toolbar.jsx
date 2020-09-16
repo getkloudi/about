@@ -84,9 +84,7 @@ export default class Toolbar extends PureComponent {
               : { display: "none" }
             }
           >
-            <a href={this.props.behindTheScenesHref}>
-              {`BEHIND THE SCENES`}
-            </a>
+            <Link to="/blog/behind-the-scenes">{`BEHIND THE SCENES`}</Link>
           </div>
 
           <div
