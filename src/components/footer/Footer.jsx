@@ -1,29 +1,32 @@
 import React, { PureComponent } from "react";
+import { Link } from "gatsby";
 
-import style from "./footer.module.scss";
-
+import logo from "../../images/kloudi-footer-logo.svg";
 import twitterImg from "../../images/twitter.svg";
 import linkedinImg from "../../images/linkedin.svg";
+
+import style from "./footer.module.scss";
 
 class Footer extends PureComponent {
   constructor(props) {
     super(props);
     this.footerContent = [
+      {
+        heading: "Company",
+        links: [
+          { text: "Book a demo", url: "https://calendly.com/sneh_ganjoo/kloudi-onboarding" },
+          { text: "Newsletter", url: "http://kloudi.substack.com/" },
+        ]
+      },
       // {
-      //   heading: "Discover",
+      //   heading: "Resources",
       //   links: [
-      //     { text: "Why Kloudi?", url:"/why-kloudi" },
+      //     { text: "Newsletter", url: "http://kloudi.substack.com/" },
+      //     { text: "Blog", url: "http://blog.kloudi.tech/" }
       //   ]
       // },
       {
-        heading: "Legal",
-        links: [
-          { text: "Privacy Policy", url: "/privacy-policy" },
-          { text: "Terms of Service", url: "/terms-of-service" }
-        ]
-      },
-      {
-        heading: "Company",
+        heading: "Support",
         links: [
           // { text: "Blog", url:"https://blog.kloudi.tech" },
           // { text: "Careers" },
@@ -47,15 +50,23 @@ class Footer extends PureComponent {
     ));
     return (
       <div className={style.footerWrapper}>
-        {/* <div className={style.footer}>
-          <img src={logo} style={{ visibility: "hidden" }} />
+        <div className={style.footer}>
+          <img src={logo}
+          // style={{ visibility: "hidden" }}
+          />
           <div className={style.columnWrapper}>{footerColumns}</div>
-        </div> */}
+        </div>
         <hr />
         <div className={style.socialBar}>
-          <p className={style.copyrightMessage}>
-            © 2020 Kloudi Virtual Assistant Private Ltd. All rights reserved.
-          </p>
+          <div className={style.copyrightMessage}>
+            {`© 2020 Kloudi Virtual Assistant Private Ltd.`}
+          </div>
+          <div className={style.copyrightMessage}>
+            <Link to="/terms-of-service">{`Terms`}</Link>
+          </div>
+          <div className={style.copyrightMessage}>
+            <Link to="/privacy-policy">{`Privacy`}</Link>
+          </div>
           <div className={style.filler} />
           {/* <a href="https://www.facebook.com/kloudbot/" target="_blank">
             <img
