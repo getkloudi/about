@@ -70,7 +70,7 @@ export default class MobileSideMenu extends PureComponent {
           <div className={style.wrapper}>
             <div className={style.contentContainer}>
               <div className={style.list}>
-                <div
+                {/* <div
                   className={style.item}
                   style={featuresVisibility == true ? {} : { display: "none" }}
                 >
@@ -81,7 +81,7 @@ export default class MobileSideMenu extends PureComponent {
                   style={pricingVisibility == true ? {} : { display: "none" }}
                 >
                   <Link to="/price-estimator">PRICING</Link>
-                </div>
+                </div> */}
 
                 <div
                   className={style.item}
@@ -100,9 +100,9 @@ export default class MobileSideMenu extends PureComponent {
                     ? { display: "flex" }
                     : { display: "none" }}
                 >
-                  <a href={this.props.whyEarlyAccessHref}>
+                  <Link to="/blog/why-early-access">
                     {`WHY EARLY ACCESS?`}
-                  </a>
+                  </Link>
                 </div>
 
                 <div

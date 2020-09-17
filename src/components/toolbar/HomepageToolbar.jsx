@@ -68,7 +68,6 @@ export default class HomepageToolbar extends PureComponent {
           onHamburgerClicked={() => this.onToolbarHamburgerClicked()} pricingVisibility={pricingVisibility}
           signInHref={this.signInHref()}
           signUpVisibility={signUpVisibility}
-          whyEarlyAccessHref={this.whyEarlyAccessHref()}
         />
         {!this.state.mobileScreen ? `` :
           <MobileSideMenu
@@ -78,7 +77,6 @@ export default class HomepageToolbar extends PureComponent {
             ref={mobileSideMenu => { this.mobileSideMenu = mobileSideMenu; }}
             signInHref={this.signInHref()}
             signUpVisibility={signUpVisibility}
-            whyEarlyAccessHref={this.whyEarlyAccessHref()}
           />}
       </div>
     );

@@ -55,7 +55,7 @@ export default class Toolbar extends PureComponent {
           <div className={style.logoText}>{`KLOUDI`}</div>
           <div className={style.filler} />
 
-          <div
+          {/* <div
             className={style.logoText}
             style={
               featuresVisibility == true && !this.state.mobileScreen
@@ -75,7 +75,7 @@ export default class Toolbar extends PureComponent {
             }
           >
             <Link to="/pricing">PRICING</Link>
-          </div>
+          </div> */}
 
           <div
             className={style.item}
@@ -94,9 +94,8 @@ export default class Toolbar extends PureComponent {
               : { display: "none" }
             }
           >
-            <a href={this.props.whyEarlyAccessHref}>
-              {`WHY EARLY ACCESS?`}
-            </a>
+            <Link to="/blog/why-early-access">{`WHY EARLY ACCESS?`}</Link>
+
           </div>
 
           <div
