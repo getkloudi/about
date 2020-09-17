@@ -102,7 +102,7 @@ export default class SimpleSignupForm extends PureComponent {
                 className="submit"
                 onClick={e => this.onFormSubmit(e)}
               >
-                Request Access
+                Next
               </PrimaryButton>
             )}
           <div className="signup-placeholder">

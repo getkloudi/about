@@ -207,7 +207,7 @@ const HomepageEAPSection = props => {
               <PrimaryButton
                 className="primary-button"
                 small={props.mobileScreen ? true : false}>
-                {`Request Access`}
+                {`Get Started`}
               </PrimaryButton>
             </Link>
           }
