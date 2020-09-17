@@ -1,10 +1,10 @@
-@import '../../scss/common/mixins';
-@import '../../scss/common/variables';
+@import "../../scss/common/mixins";
+@import "../../scss/common/variables";
 
 .btn {
   @include flex-row-justify-center;
   height: 60px;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: 500;
   font-size: 18px;
   text-transform: uppercase;
@@ -30,10 +30,12 @@
 .btnPrimary {
   border-radius: 8px;
   color: $white;
-  background: $primary-gradient;
+  background: $secondary-color;
+  border-color: $secondary-color;
   border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+
   &:hover {
-    border: solid 1px $primary-color;
     transform: scale(1.015);
     -webkit-transform: scale(1.015);
     -ms-transform: scale(1.015);
@@ -69,7 +71,7 @@
   border-radius: 8px;
   border: none;
   background-color: rgba(17, 153, 142, 0.1);
-  font-family: 'Lato';
+  font-family: "Lato";
   font-size: 20px;
   font-weight: 500;
   color: #11998e;
@@ -153,7 +155,7 @@
   .icon {
     height: 28px;
     width: 18px;
-    background-image: url('./assets/delete.svg');
+    background-image: url("./assets/delete.svg");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -163,7 +165,7 @@
   &:hover {
     background-color: $error-color;
     .icon {
-      background-image: url('./assets/delete-hover.svg');
+      background-image: url("./assets/delete-hover.svg");
     }
   }
 }
@@ -180,7 +182,7 @@
   .icon {
     height: 20px;
     width: 20px;
-    background-image: url('./assets/select-multiple.svg');
+    background-image: url("./assets/select-multiple.svg");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -190,7 +192,7 @@
   &:hover {
     background-color: $secondary-text-color;
     .icon {
-      background-image: url('./assets/select-multiple-hover.svg');
+      background-image: url("./assets/select-multiple-hover.svg");
     }
   }
 }
@@ -207,7 +209,7 @@
   .icon {
     height: 20px;
     width: 20px;
-    background-image: url('./assets/link.svg');
+    background-image: url("./assets/link.svg");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -217,7 +219,7 @@
   &:hover {
     background-color: $secondary-text-color;
     .icon {
-      background-image: url('./assets/link-hover.svg');
+      background-image: url("./assets/link-hover.svg");
     }
   }
 }
@@ -234,7 +236,7 @@
   .icon {
     height: 14px;
     width: 7px;
-    background-image: url('./assets/querybar-back.svg');
+    background-image: url("./assets/querybar-back.svg");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -244,7 +246,7 @@
   &:hover {
     background-color: rgba($color: $primary-text-color, $alpha: 1);
     .icon {
-      background-image: url('./assets/querybar-back-hover.svg');
+      background-image: url("./assets/querybar-back-hover.svg");
     }
   }
 }
@@ -252,11 +254,11 @@
 .activeSelectMultipleIconButton {
   background-color: $secondary-text-color;
   .icon {
-    background-image: url('./assets/select-multiple-active.svg');
+    background-image: url("./assets/select-multiple-active.svg");
   }
   &:hover {
     .icon {
-      background-image: url('./assets/select-multiple-active.svg');
+      background-image: url("./assets/select-multiple-active.svg");
     }
   }
 }
@@ -264,11 +266,11 @@
 .activeLinkIconButton {
   background-color: $secondary-text-color;
   .icon {
-    background-image: url('./assets/link-active.svg');
+    background-image: url("./assets/link-active.svg");
   }
   &:hover {
     .icon {
-      background-image: url('./assets/link-active.svg');
+      background-image: url("./assets/link-active.svg");
     }
   }
 }
