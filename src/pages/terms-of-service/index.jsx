@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <title>Privacy Policy - Kloudi</title>
+        <title>Terms of Service - Kloudi</title>
       </Head>
       <HomepageToolbar pricingVisibility={false} />
       <div className="terms-of-service">
