@@ -1,7 +1,7 @@
-@import '../../scss/common/mixins';
-@import '../../scss/common/variables';
-@import '../../scss/common/input';
-@import '../../scss/common/link';
+@import "../../scss/common/mixins";
+@import "../../scss/common/variables";
+@import "../../scss/common/input";
+@import "../../scss/common/link";
 
 .container {
   @include flex-column-center();
@@ -20,7 +20,7 @@
     }
     .greeting {
       @include clear();
-      font-family: 'Nunito Sans';
+      font-family: "AvenirNext";
       font-size: $desktop-h4;
       font-weight: 600;
       color: $heading-text-color;
@@ -28,7 +28,7 @@
     }
     .message {
       @include clear();
-      font-family: 'Nunito Sans';
+      font-family: "AvenirNext";
       font-size: 24px;
       line-height: normal;
       letter-spacing: normal;
@@ -42,7 +42,7 @@
     margin: 32px 0 0 0;
 
     .message {
-      font-family: 'Nunito Sans';
+      font-family: "AvenirNext";
       font-size: $default-text;
       line-height: normal;
       letter-spacing: normal;
@@ -54,7 +54,7 @@
     .submit {
       width: 360px;
       margin: 0 auto;
-      font-family: 'Lato';
+      font-family: "Futura";
     }
 
     .divider {

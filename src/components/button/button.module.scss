@@ -4,7 +4,7 @@
 .btn {
   @include flex-row-justify-center;
   height: 60px;
-  font-family: "Lato";
+  font-family: "Futura";
   font-weight: 500;
   font-size: 18px;
   text-transform: uppercase;
@@ -22,15 +22,19 @@
     margin: auto 16px;
   }
   &.small {
-    height: 48px;
-    font-size: 16px;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 16px;
+    img {
+      margin: auto 8px auto 16px;
+    }
   }
 }
 
 .btnPrimary {
   border-radius: 8px;
   color: $white;
-  background: $secondary-color;
+  background: linear-gradient(90deg, $secondary-color 0%, #6dd5ed 100%);
   border-color: $secondary-color;
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
@@ -71,7 +75,7 @@
   border-radius: 8px;
   border: none;
   background-color: rgba(17, 153, 142, 0.1);
-  font-family: "Lato";
+  font-family: "Futura";
   font-size: 20px;
   font-weight: 500;
   color: #11998e;

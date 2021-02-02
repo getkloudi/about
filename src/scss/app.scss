@@ -12,6 +12,10 @@
 .light {
   font-weight: 300;
 }
+.normal {
+  font-weight: 400;
+}
+.medium,
 .demi-bold {
   font-weight: 500;
 }
@@ -39,7 +43,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: Nunito Sans;
+  font-family: AvenirNext;
   font-weight: 400;
   color: $primary-text-color;
   font-size: 16px;

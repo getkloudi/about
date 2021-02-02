@@ -12,8 +12,8 @@
 }
 
 @mixin hexagon-background-left-diagonal {
-  background-image: url('../images/top-left-bg.svg'),
-    url('../images/bottom-right-bg.svg');
+  background-image: url("../images/top-left-bg.svg"),
+    url("../images/bottom-right-bg.svg");
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
 
@@ -30,25 +30,25 @@
 
 @mixin hexagon-background {
   @media only screen and (min-width: 0px) {
-    background-image: url('../images/top-left-bg.svg'),
-      url('../images/bottom-right-bg.svg');
+    background-image: url("../images/top-left-bg.svg"),
+      url("../images/bottom-right-bg.svg");
     background-position: left top, right bottom;
     background-size: 80%, 80%;
     background-repeat: no-repeat, no-repeat;
   }
 
   @media only screen and (min-width: 480px) {
-    background-image: url('../images/top-left-bg.svg'),
-      url('../images/bottom-right-bg.svg');
+    background-image: url("../images/top-left-bg.svg"),
+      url("../images/bottom-right-bg.svg");
     background-position: left top, right bottom;
     background-size: 60%, 60%;
     background-repeat: no-repeat, no-repeat;
   }
 
   @media only screen and (min-width: 960px) {
-    background-image: url('../images/top-left-bg.svg'),
-      url('../images/top-right-bg.svg'), url('../images/bottom-right-bg.svg'),
-      url('../images/bottom-left-bg.svg');
+    background-image: url("../images/top-left-bg.svg"),
+      url("../images/top-right-bg.svg"), url("../images/bottom-right-bg.svg"),
+      url("../images/bottom-left-bg.svg");
     background-position: left top, right top, right bottom, left bottom;
     background-size: 40%, 40%, 40%, 40%;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
@@ -57,26 +57,26 @@
 
 @mixin hexagon-background-for-components {
   @media only screen and (min-width: 0px) {
-    background-image: url('../../images/top-left-bg.svg'),
-      url('../../images/bottom-right-bg.svg');
+    background-image: url("../../images/top-left-bg.svg"),
+      url("../../images/bottom-right-bg.svg");
     background-position: left top, right bottom;
     background-size: 80%, 80%;
     background-repeat: no-repeat, no-repeat;
   }
 
   @media only screen and (min-width: 480px) {
-    background-image: url('../../images/top-left-bg.svg'),
-      url('../../images/bottom-right-bg.svg');
+    background-image: url("../../images/top-left-bg.svg"),
+      url("../../images/bottom-right-bg.svg");
     background-position: left top, right bottom;
     background-size: 60%, 60%;
     background-repeat: no-repeat, no-repeat;
   }
 
   @media only screen and (min-width: 960px) {
-    background-image: url('../../images/top-left-bg.svg'),
-      url('../../images/top-right-bg.svg'),
-      url('../../images/bottom-right-bg.svg'),
-      url('../../images/bottom-left-bg.svg');
+    background-image: url("../../images/top-left-bg.svg"),
+      url("../../images/top-right-bg.svg"),
+      url("../../images/bottom-right-bg.svg"),
+      url("../../images/bottom-left-bg.svg");
     background-position: left top, right top, right bottom, left bottom;
     background-size: 40%, 40%, 40%, 40%;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
@@ -198,7 +198,7 @@
 }
 
 @mixin plan-name {
-  font-family: 'Nunito Sans';
+  font-family: "AvenirNext";
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -207,7 +207,7 @@
 }
 
 @mixin plan-pricing {
-  font-family: 'Lato';
+  font-family: "Futura";
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -218,7 +218,7 @@
   @include flex-column-center;
   justify-content: center;
   .text {
-    font-family: 'Nunito Sans';
+    font-family: "AvenirNext";
     font-style: normal;
     font-stretch: normal;
     color: $secondary-text-color;

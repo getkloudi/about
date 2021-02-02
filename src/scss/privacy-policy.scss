@@ -1,4 +1,7 @@
-@import "./app.scss";
+@import "./common/bootstrap-essentials";
+@import "./common/mixins";
+@import "./common/variables";
+
 .privacy-policy-page {
   @include clear();
   @include make-container();

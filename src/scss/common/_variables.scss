@@ -1,5 +1,5 @@
 $primary-color: #f06723;
-$secondary-color: #11998e;
+$secondary-color: #2193b0;
 $primary-text-color: #4a4a4a;
 $secondary-text-color: #9b9b9b;
 $error-color: #ee5253;
@@ -7,7 +7,7 @@ $good-health-color: #4caf50;
 $medium-health-color: #ffc107;
 $bad-health-color: #f44336;
 $heading-text-color: #4a4a4a;
-$link-hover-color: #2193b0;
+$link-hover-color: #4a90e2;
 $border-color: #e4e5ec;
 $white: #ffffff;
 $container-width: 1280px;
@@ -22,14 +22,14 @@ $assistant-recommendation-mobile-width: 320px;
 //Bootstrap theme colors
 $secondary-bg-color: #fafafa;
 $theme-colors: (
-  'primary': #f06723,
-  'secondary': #34aca4,
-  'danger': #9b140d,
-  'add-feature': rgba(17, 153, 142, 0.1),
-  'inactive': #e4e5ec,
+  "primary": #f06723,
+  "secondary": #34aca4,
+  "danger": #9b140d,
+  "add-feature": rgba(17, 153, 142, 0.1),
+  "inactive": #e4e5ec,
 );
 $colors: (
-  'orange': #f06723,
+  "orange": #f06723,
 ) !default;
 $grid-columns: 12;
 $grid-gutter-width: 16px;

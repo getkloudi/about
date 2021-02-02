@@ -1,7 +1,7 @@
-@import '../../scss/common/bootstrap-essentials';
-@import '../../scss/common/link';
-@import '../../scss/common/input';
-@import '../../scss/common/variables';
+@import "../../scss/common/bootstrap-essentials";
+@import "../../scss/common/link";
+@import "../../scss/common/input";
+@import "../../scss/common/variables";
 
 .signup-form {
   position: relative;
@@ -18,7 +18,7 @@
     }
     .header-greeting {
       @include clear();
-      font-family: 'Nunito Sans';
+      font-family: "AvenirNext";
       font-weight: 600;
       font-size: 24px;
       color: $heading-text-color;
@@ -28,7 +28,7 @@
     .header-message {
       @include clear();
       display: inline-block;
-      font-family: 'Nunito Sans';
+      font-family: "AvenirNext";
       font-size: 24px;
       text-align: center;
       color: $heading-text-color;
@@ -98,7 +98,7 @@
     .footer-message {
       width: 300px;
       height: 44px;
-      font-family: Nunito Sans;
+      font-family: AvenirNext;
       font-size: $standard-text-size;
       font-weight: 600;
       letter-spacing: normal;
@@ -118,7 +118,7 @@
       width: 300px;
     }
     .signup-placeholder {
-      font-family: Nunito Sans;
+      font-family: AvenirNext;
       font-size: $standard-text-size;
       font-weight: 600;
       letter-spacing: normal;

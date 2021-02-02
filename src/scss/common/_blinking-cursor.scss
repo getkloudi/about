@@ -1,13 +1,13 @@
-@import 'node_modules/bootstrap/scss/functions';
-@import 'node_modules/bootstrap/scss/variables';
-@import 'node_modules/bootstrap/scss/mixins';
-@import '../../scss/common/variables';
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "../../scss/common/variables";
 
 @mixin blinking-cursor-animation {
   .blinking-cursor {
     font-weight: 100;
     font-size: $desktop-h4;
-    font-family: 'Lato';
+    font-family: "Futura";
     color: $primary-text-color;
     -webkit-animation: 1s blink step-end infinite;
     -moz-animation: 1s blink step-end infinite;

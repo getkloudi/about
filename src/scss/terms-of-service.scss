@@ -1,5 +1,6 @@
-@import "./app.scss";
-@import "./common/_mixins.scss";
+@import "./common/bootstrap-essentials";
+@import "./common/mixins";
+@import "./common/variables";
 
 .terms-of-service-page {
   @include clear();
