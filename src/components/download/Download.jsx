@@ -56,7 +56,7 @@ export function Download(props) {
               <CopyToClipboard text={command}
                 onCopy={handleOnCopyToClipboard}>
                 <div style={{
-                  width: "100%", backgroundColor: "rgb(245, 242, 240",
+                  width: "100%", backgroundColor: "rgb(245, 242, 240)",
                   padding: "16px 16px 4px 8px",
                   borderRadius: "8px 8px 0 0", cursor: "pointer"
                 }}>
