@@ -118,7 +118,7 @@ export default class Homepage extends React.PureComponent {
           </div>
           <HomepageSupportedToolsCardSection
             mobileScreen={this.state.mobileScreen} />
-          <div className={`${style.columnContent} medium`}
+          {/* <div className={`${style.columnContent} medium`}
             style={{
               margin: this.state.mobileScreen ?
                 "16px auto 0 auto" : "16px auto 0 32px"
@@ -133,7 +133,7 @@ export default class Homepage extends React.PureComponent {
             }}>
             {`Want to connect your favorite tool with Kloudi? `}
             <Link className={style.link} to={``}>{`Help us out in our garage.`}</Link>
-          </div>
+          </div> */}
         </HomepageSection>
         <HomepageHighlightSection
           h2={`🛡 Your privacy is our priority`}
