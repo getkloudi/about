@@ -2,7 +2,9 @@ import React from "react";
 import { Helmet as Head } from "react-helmet";
 import { Link } from "gatsby";
 
-import { PrimaryButton, OutlineButton } from "../components/button";
+import { Divider } from "antd";
+import { Download as DownloadSection } from "../components/download/Download";
+import { PrimaryButton } from "../components/button";
 import Footer from "../components/footer/Footer";
 import HomepageToolbar from "../components/toolbar/HomepageToolbar";
 
@@ -17,7 +19,7 @@ import searchLogo from "../images/search-logo.svg";
 
 import EnvironmentUtil from "../utils/EnvironmentUtil";
 
-import "../scss/homepage.scss";
+import style from "../scss/homepage.module.scss";
 
 export default class Homepage extends React.PureComponent {
   constructor(props) {
@@ -59,26 +61,26 @@ export default class Homepage extends React.PureComponent {
 
   render() {
     return (
-      <div className="homePage">
+      <div className={style.homePage}>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           {/* <!-- SEO --> */}
           <meta name="application-name" content="Kloudi" />
-          <meta name="description" content="Kloudi is an NLP terminal that brings all the data and actions from your tools at one place. All of this ease without learning any command or leaving your editor." />
+          <meta name="description" content="Kloudi is a universal command line that brings all the data and actions from your tools at one place." />
           {/* <!-- open graph and twitter tags --> */}
           <meta property="og:site_name" content="Kloudi" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Kloudi - No command terminal for your daily workflows" />
-          <meta property="og:description" content="Kloudi is an NLP terminal that brings all the data and actions from your tools at one place. All of this ease without learning any command or leaving your editor." />
+          <meta property="og:title" content="Kloudi - Universal command line for engineering tools" />
+          <meta property="og:description" content="Kloudi is a universal command line that brings all the data and actions from your tools at one place." />
           <meta property="og:image" content="https://kloudi.tech/happy-logo.png" />
           <meta property="og:url" content="https://kloudi.tech/" />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@KloudiTech" />
           <meta name="twitter:image" content="https://kloudi.tech/happy-logo.png" />
-          <meta name="twitter:alt" content="Kloudi - No command terminal for your daily workflows." />
+          <meta name="twitter:alt" content="Kloudi - Universal command line for engineering tools." />
           <title>
-            {`Kloudi - No command terminal for your daily workflows.`}
+            {`Kloudi - Universal command line for engineering tools.`}
           </title>
           {/* <!-- Web App Icons --> */}
           <meta name="mobile-web-app-capable" content="yes" />
@@ -87,81 +89,113 @@ export default class Homepage extends React.PureComponent {
           <meta name="apple-mobile-web-app-title" content="Kloudi" />
         </Head>
         <HomepageToolbar signUpVisibility={false} />
-        <div
-          className="contentWrapper"
-          style={this.state.mobileScreen ?
-            { marginTop: "32px", marginBottom: "32px" } :
-            { marginTop: "64px", marginBottom: "64px" }
-          }>
-          <div className="content">
-            <img alt="" className="terminal" src={searchLogo} />
-            <div className="h2 semi-bold ">{`No command terminal`}
-            </div >
-            <div className="h3 light">{`Connecting all your daily workflows`}</div >
-            <div className="secondary h4 light "
-              style={{ marginTop: "8px", marginBottom: "32px" }}>
-              {`Kloudi is an NLP terminal that brings all the data and actions from your tools at one place so that you have the most seamless experience ever!`}
-            </div>
-            <Link
-              className="eap-button"
-              to={`/signup${!!this.state.email ?
-                `?email=${this.state.email}` :
-                `/`}`}>
-              <PrimaryButton
-                className="primary-button"
-                onClick={_ => this.props.onEAPSignUpClick()}
-                small={this.state.mobileScreen ? true : false}>
-                {`Get Started`}
-              </PrimaryButton>
-            </Link>
-          </div >
-        </div >
         <HomepageSection
-          emoji={`🔗`}
-          h2={`Terminal to connect all your tools`}
-          h3={`Bringing all the data at one place`}
-          h5={`Tired of old-fashioned debugging and navigating between tools to make sense of your data. Say no more!`}
-          hint={`It takes only 2 mins to connect your tool with Kloudi`}
-          illustration={connect}
-        />
+          firstSection
+          h2={`Universal Command Line `}
+          h3={`Get relevant data from tools, in seconds!`}
+          h5={`Enter commands and queries to search, view and perform actions on data from all your engineering tools.`}
+          button />
         <HomepageSection
-          emoji={`⌘`}
-          h2={`Perform every action using Kloudi`}
-          h3={`Without learning any command `}
-          h5={<p>{`Are you sick of learning commands for every tool. Press `}{["Mac OS", "iOS"].indexOf(EnvironmentUtil.getOS()) >= 0 ? <span className="key">{`command`}</span> : <span className="key">{`ctrl`}</span>}
-            {` + `}
-            <span className="key">{`k`}</span>
-            {` and watch your tools tell you the story.`}</p>}
-          hint={`Queries in Kloudi build context to your data`}
-          illustration={converse}
-          mobileIllustration={converseMobile}
-          mobileScreen={this.state.mobileScreen}
-        />
+          h2={`All the goodness of a Command Line`}
+          h3={`And more, for your tools`} >
+          <div className={style.featureRow}>
+            <HomepageFeatureCardSection
+              description={"Initialize by connecting your tools. Kloudi currently connects with tools through API Keys and OAuth."}
+              emoji={`🔗`}
+              queries={["connect with sentry", "github init"]}
+              title={"Connect"} />
+            <HomepageFeatureCardSection
+              description={"Enter commands to search relevant data from tools using an AI powered command line."}
+              emoji={`⌘`}
+              queries={["ls issues last 24hrs", "view open tickets"]}
+              title={"Search"} />
+            <HomepageFeatureCardSection
+              description={"View data and perform relevant actions without the clutter of alerts, notifications and mindless navigation."}
+              emoji={`🎮`}
+              title={"Play"}
+              queries={["sentry mark issue done",
+                "create an issue on gh"]} />
+          </div>
+          <HomepageSupportedToolsCardSection
+            mobileScreen={this.state.mobileScreen} />
+          <div className={`${style.columnContent} medium`}
+            style={{
+              margin: this.state.mobileScreen ?
+                "16px auto 0 auto" : "16px auto 0 32px"
+            }}>
+            {`Can't see your favorite tool yet. `}
+            <Link className={style.link} to={``}>{`Let us know!`}</Link>
+          </div>
+          <div className={`${style.columnContent} medium`}
+            style={{
+              margin: this.state.mobileScreen ?
+                "8px auto 0 auto" : "8px auto 0 32px"
+            }}>
+            {`Want to connect your favorite tool with Kloudi? `}
+            <Link className={style.link} to={``}>{`Help us out in our garage.`}</Link>
+          </div>
+        </HomepageSection>
+        <HomepageHighlightSection
+          h2={`🛡 Your privacy is our priority`}
+          h4={`All form factors of Kloudi can be run locally, giving you 100% functionality and performance from the safety of your system.`}
+          mobileScreen={this.state.mobileScreen} />
         <HomepageSection
-          emoji={`🧩`}
-          h2={`Zero navigation for your workflows`}
-          h3={`Unlocking cross-functionality for tools`}
-          h5={`Don’t you wish you had to spend less time navigating tools and collating data. Wish no more cause with Kloudi you get the most actionable data.`}
-          hint={'Navigation can take upto 25 mins of your time everyday'}
-          illustration={collate}
-          mobileIllustration={collateMobile}
-          mobileScreen={this.state.mobileScreen}
-        />
-        <HomepageEAPSection
-          emoji={`🎮`}
-          h2={`Completely functional in your IDE`}
-          h3={`Live with VSCode.`}
-          h5={`We built Kloudi to bring the best experience in your IDEs. Kloudi extension is live in VSCode and IntelliJ plugin is coming soon!`}
-          illustration={`https://kloudi.tech/kloudi-in-vscode.png`}
-          ide
-          mobileScreen={this.state.mobileScreen}
-        />
-        <HomepageSection
-          h2={`Unlock a better experience for your tools with Kloudi`}
-          mobileScreen={this.state.mobileScreen}
-          button
-        />
-        <div className="footerContainer">
+          h2={`How developers use Kloudi`}
+          h5={`Kloudi is built for developers, to help them solve the problem of managing data across tools and the cognitive overload that comes with a decoupled toolkit. Here's how you can use Kloudi. `}>
+          <HomepageFeatureRowSection
+            description={`Move away from the archaic way of searching for data within your tools and learning how to use them. With unified command line powered by AI you can now search and view data that matters to you.`}
+            heading={`🔍 Universal Search`}
+            hint={`Queries helps you to build context for data from your tools`}
+            illustration={converse}
+            index={0}
+            key={0}
+            mobileScreen={this.state.mobileScreen} />
+          <HomepageFeatureRowSection
+            description={`Minimize navigating across tools by connecting your tools with Kloudi. Connecting tools enables connecting the dots to build context required to solve your next bug faster!`}
+            heading={`🧩 Contextual Navigation`}
+            hint={`Any tool with an API can be added to Kloudi.`}
+            illustration={connect}
+            index={1}
+            key={1}
+            mobileScreen={this.state.mobileScreen} />
+          <HomepageFeatureRowSection
+            description={[
+              `Paraphrasing J.R.R Tolkien from ${this.state.mobileScreen ? `LOTR` : `Lord of the Rings`}, `,
+              <br />, <br />,
+              <i>&nbsp;One </i>,
+              ["Mac OS", "iOS"].indexOf(EnvironmentUtil.getOS()) >= 0 ?
+                <span className={style.key}>{`command+k`}</span> :
+                <span className={style.key}>{`ctrl+k`}</span>,
+              <i> to connect them all,</i>,
+              <br />,
+              <i>&nbsp;One </i>,
+              ["Mac OS", "iOS"].indexOf(EnvironmentUtil.getOS()) >= 0 ?
+                <span className={style.key}>{`command+k`}</span> :
+                <span className={style.key}>{`ctrl+k`}</span>,
+              <i> to find them </i>,
+              <br />,
+              <i>&nbsp;One </i>,
+              ["Mac OS", "iOS"].indexOf(EnvironmentUtil.getOS()) >= 0 ?
+                <span className={style.key}>{`command+k`}</span> :
+                <span className={style.key}>{`ctrl+k`}</span>,
+              <i> to bring them all,</i>,
+              <br />,
+              <i>&nbsp;And </i>,
+              <i> in the darkness bind them.&nbsp;</i>
+            ]}
+            heading={`🏎 Faster Actions`}
+            illustration={collate}
+            mobileScreen={this.state.mobileScreen}
+            index={2}
+            key={2} />
+        </HomepageSection>
+        <DownloadSection mobileScreen={this.state.mobileScreen} />
+        <HomepageNewsletterSection
+          h2={`🗞 Subscribe to Kloudi's Newsletter`}
+          h4={`Get bi-weekly newsletter from Kloudi's founders talking about the changes of the week, origin stories, first principles and much more`}
+          mobileScreen={this.state.mobileScreen} />
+
+        <div className={style.footerContainer}>
           <Footer />
         </div>
       </div >
@@ -169,86 +203,275 @@ export default class Homepage extends React.PureComponent {
   }
 }
 
-const getContentForHomepageEAPSection = (ide, illustration, mobileScreen) => {
-  if (!!ide)
-    return <div className="vscode-illustration">
-      <a className="button" href={`vscode:extension/Kloudi.kloudi`}>
-        <img alt={`Install Kloudi's VSCode Extension`}
-          className={`illustration${ide ? ` ide` : ``}`}
-          src={illustration} />
-        <PrimaryButton
-          className="primary-button"
-          small={mobileScreen ? true : false}>
-          {`Install Extension`}
-        </PrimaryButton>
-      </a>
-      <p style={{ textAlign: "center" }}>
-        {`or download from `}
-        <a className="link" href={`https://marketplace.visualstudio.com/items?itemName=Kloudi.kloudi`}>{`Visual Studio Marketplace`}</a>
-      </p>
-    </div >;
-  else
-    return <img className={""} src={illustration} alt="" />;
+const HomepageHighlightSection = props => {
+  const { mobileScreen } = props;
+  return (
+    <section className={`${style.contentWrapper} ${style.secondaryBg}`} >
+      <div className={style.content}>
+        <div className={`${style.h2} ${`semiBold`}`}>{props.h2}</div>
+        <div className={`${style.h4} ${`light`} ${style.containBox}`}>
+          {props.h4}
+        </div>
+        <Link className={style.button}
+          style={{ marginTop: "32px", marginBottom: "16px" }}
+          to={`/get-started`} >
+          <PrimaryButton
+            className={`${style.primaryButton} ${style.textTransformNone}`}
+            small={mobileScreen ? true : false}>
+            {`Available on macOS`}
+          </PrimaryButton>
+        </Link>
+        <Divider className={style.divider} />
+      </div>
+    </section>);
 };
 
-const HomepageEAPSection = props => {
+const HomepageNewsletterSection = props => {
+  const { mobileScreen } = props;
   return (
-    <div className="contentWrapper secondary-bg" >
-      <div className="content">
-        <div className="headingWrapper">
-          <div className="h2 emoji"><span>{props.emoji}</span></div>
-          <div className="h2 semi-bold ">{props.h2}</div>
-          <div className="h3 light">{props.h3}</div>
-          <div className="h5 secondary">{props.h5}</div>
-          {props.illustration ?
-            getContentForHomepageEAPSection(
-              props.ide, props.illustration, props.mobileScreen) :
-            <Link className="button" to={`/signup`} >
-              <PrimaryButton
-                className="primary-button"
-                small={props.mobileScreen ? true : false}>
-                {`Get Started`}
-              </PrimaryButton>
-            </Link>
-          }
+    <section className={`${style.contentWrapper} ${style.secondaryBg}`} >
+      <div className={style.content}>
+        <div className={`${style.h2} ${`semiBold`}`}>{props.h2}</div>
+        <div className={`${style.h4} ${`light`} ${style.containBox}`}>
+          {props.h4}
         </div>
+        <a className={style.button}
+          style={{ marginTop: "32px", marginBottom: "16px" }}
+          href={`https://kloudi.substack.com`} >
+          <PrimaryButton
+            className={`${style.primaryButton} ${style.textTransformNone}`}
+            small={mobileScreen ? true : false}>
+            {`SUBSCRIBE`}
+          </PrimaryButton>
+        </a>
+        <Divider className={style.divider} />
       </div>
-    </div>);
+    </section>);
 };
 
 const HomepageSection = props => {
+  const { firstSection, mobileScreen } = props;
   return (
-    <div className={`contentWrapper`}>
-      <div className="content">
+    <section className={style.contentWrapper}>
+      <div className={style.content}
+        style={firstSection ? { marginTop: "64px" } : {}}>
         {props.emoji ?
-          <div className="h2 emoji"><span>{props.emoji}</span></div> :
-          <img alt="" className="terminal" src={searchLogo} />
+          <div className={`${style.h2} ${style.emoji}`}><span>{props.emoji}</span></div> :
+          <img alt="" className={style.terminal} src={searchLogo} />
         }
-        <div className="headingWrapper">
-          <div className="h2 semi-bold">{props.h2}</div>
-          <div className="h3 light">{props.h3}</div>
-          <div className="h5 secondary">{props.h5}</div>
-          {/* <div className="iframe-wrapper">
-            <iframe src="https://www.loom.com/embed/e9b6a5194a0449e98752116bda7a912e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen className="iframe" />
-          </div> */}
+        <div className={`${style.h2} ${`medium`}`}>{props.h2}</div>
+        <div className={`${style.h3} ${`light`} ${style.containBox}`}>
+          {props.h3}
         </div>
+        {props.h5 !== undefined ?
+          <div className={`${style.h5} ${style.containBox}`}
+            style={{ marginTop: "32px", marginBottom: "16px" }}>
+            {props.h5}
+          </div> : ``
+        }
         {props.illustration ?
-          <img
-            alt=""
-            className={`homepage-illustration`}
-            src={props.mobileScreen ? props.mobileIllustration || props.illustration : props.illustration} /> :
-          ``}
-        {props.hint ? <div className="h6 hint">
-          <img alt="" className="hint-img" src={idea} />
-          {`${props.hint}`}
+          <img alt=""
+            className={`${style.homepageIllustration}`}
+            src={mobileScreen ? props.mobileIllustration || props.illustration : props.illustration} /> : ``
+        }
+        {props.hint ? <div className={`${style.h6} ${style.hint}`}>
+          <img alt="" className={style.hintImg} src={idea} />
+          <span >{props.hint}</span>
         </div> : ""}
-        {props.button ? <Link className="button" to={`/signup`} >
-          <PrimaryButton
-            className="primary-button"
-            small={props.mobileScreen ? true : false}>
-            {`Get Started`}
-          </PrimaryButton>
-        </Link> : ''}
+        {props.children ? props.children : ``}
+        {props.button ?
+          <Link className={style.button} to={`/get-started`} >
+            <PrimaryButton
+              className={style.primaryButton}
+              small={mobileScreen ? true : false}>
+              {`Get Started`}
+            </PrimaryButton>
+          </Link> : ''}
+        <Divider className={style.divider} />
       </div>
-    </div>);
+    </section >);
+};
+
+const HomepageFeatureRowSection = props => {
+  const { index, mobileScreen } = props;
+  return (
+    <div className={`${style.featureRow} ${!mobileScreen ? (index % 2 == 1 ? `` : `${style.featureRowReverse}`) : style.featureRowReverse}`}
+      key={index}>
+      <div className={style.featureColumn}>
+        <div className={style.columnContent}>
+          <div className={`${style.h3} medium`}>{props.heading}</div>
+          <div className={style.h6} >{props.description}</div>
+        </div>
+        {props.hint ? <div className={`${style.h6} ${style.hint}`}>
+          <img alt="" className={style.hintImg} src={idea} />
+          <span >{props.hint}</span>
+        </div> : ""}
+      </div>
+      <div className={style.featureColumn}>
+        {props.video ?
+          <div className={style.video}>{props.video}</div> :
+          <img alt="" className={style.featureIllustration}
+            src={
+              mobileScreen ?
+                props.mobileIllustration || props.illustration :
+                props.illustration
+            } />
+        }
+      </div>
+    </div>
+  );
+};
+
+const HomepageFeatureCardSection = props => {
+  return (
+    <div className={`${style.featureColumn} ${style.featureCard}`}>
+      <div className={style.columnContent}>
+        {props.emoji ?
+          <div className={`${style.h2} ${style.emoji}`}>
+            <span>{props.emoji}</span>
+          </div> :
+          props.image ?
+            <img alt="" className={style.terminal} src={props.image} /> : ``
+        }
+        <div className={`${style.h4} medium`}>{props.title}</div>
+        <div className={style.h6}>{props.description}</div>
+        {props.queries ?
+          <div className={style.h6}>
+            <br />
+            {
+              props.queries.map((q, index) =>
+                <span className={style.key} key={index}
+                  style={{
+                    lineHeight: "2", padding: "4px 8px",
+                  }}>
+                  {q}
+                  <br />
+                </span>
+              )
+            }
+          </div> : ``}
+      </div>
+    </div >
+  );
+};
+
+const HomepageSupportedToolsCardSection = props => {
+  const { mobileScreen } = props;
+  return (
+    <div className={style.featureRow}
+      style={{
+        borderRadius: "8px",
+        border: "solid 1px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0 0 30px 0 rgba(0, 0, 0, 0.1), 0 0 0.5px 0 rgba(0, 0, 0, 0.05)",
+        background: "linear-gradient(0deg, rgba(248, 251, 252, 1) 0, rgba(248, 251, 252, 0) 100%)",
+        padding: "32px",
+        marginLeft: !mobileScreen ? "16px" : "auto",
+        marginRight: "auto"
+      }}>
+      <div className={style.featureColumn}
+        style={{ alignItems: "start", width: "100%", marginTop: "0px" }}>
+        <div className={`${mobileScreen ? style.h3 : style.h4} ${style.columnContent} medium`} style={{ marginBottom: "16px" }}>
+          {`Built in tools supported by Kloudi`}
+        </div>
+        <div className={style.columnContent}
+          style={{
+            width: mobileScreen ? "100%" : "unset", marginBottom: "8px"
+          }}>
+          {["Sentry", "GitHub", "Jira"].map((q, index) =>
+            <span className={style.key} key={index}
+              style={{
+                marginRight: "4px", fontSize: "14px",
+                lineHeight: "2", padding: "4px 8px"
+              }}>
+              <svg style={{ width: "8px", marginRight: "8px" }}
+                viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6" cy="6" r="6" fill="#4caf50" />
+              </svg>
+              {q}
+              {mobileScreen && index == 1 ? <br /> : ``}
+            </span>)}
+        </div>
+        <div className={style.columnContent}
+          style={{
+            width: mobileScreen ? "100%" : "unset", marginBottom: "8px"
+          }}>
+          {["Datadog", "Bitbucket",
+            mobileScreen ? "Amazon EC2" : "Amazon Elastic Compute Cloud (EC2)",
+            "Rollbar", "Opsgenie"].map((q, index) =>
+              <span className={style.key} key={index}
+                style={{
+                  marginRight: "4px", fontSize: "14px",
+                  lineHeight: "2", padding: "4px 8px"
+                }}>
+                <svg style={{ width: "8px", marginRight: "8px" }}
+                  viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="6" fill="#ffc107" />
+                </svg>
+                {q}
+                {mobileScreen && (index == 1) ? <br /> : ``}
+              </span>
+            )}
+        </div>
+        <div className={style.columnContent}
+          style={{
+            width: mobileScreen ? "100%" : "unset", marginBottom: "8px"
+          }}>
+          {["Bash", "Vercel", "MongoB Atlas", "Slack", "Microsoft Azure"].map((q, index) =>
+            <span className={style.key} key={index}
+              style={{
+                marginRight: "4px", fontSize: "14px",
+                lineHeight: "2", padding: "4px 8px"
+              }}>
+              <svg style={{ width: "8px", marginRight: "8px" }}
+                viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6" cy="6" r="6" fill="#4a90e2" />
+              </svg>
+              {q}
+              {mobileScreen && index > 0 && (index == 1 || index == 4)
+                ? <br /> : ``}
+            </span>
+          )}
+        </div>
+        <div className={`demi-bold`}
+          style={{ margin: "16px 0 0 auto", fontSize: "12px" }}>
+          <span style={{
+            padding: mobileScreen ? "0 4px" : "0 8px",
+            margin: mobileScreen ? "0 4px" : "0 8px 0 0"
+          }}>
+            <svg style={{
+              width: "8px", marginRight: mobileScreen ? "4px" : "8px"
+            }}
+              viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="6" cy="6" r="6" fill="#4caf50" />
+            </svg>
+            {`Beta`}
+          </span>
+          <span style={{
+            padding: mobileScreen ? "0 4px" : "0 8px",
+            margin: mobileScreen ? "0 4px" : "0 8px"
+          }}>
+            <svg style={{
+              width: "8px", marginRight: mobileScreen ? "4px" : "8px"
+            }}
+              viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="6" cy="6" r="6" fill="#ffc107" />
+            </svg>
+            {`Alpha`}
+          </span>
+          <span style={{
+            padding: mobileScreen ? "0 4px" : "0 8px",
+            margin: mobileScreen ? "0 4px" : "0 8px"
+          }}>
+            <svg style={{
+              width: "8px", marginRight: mobileScreen ? "4px" : "8px"
+            }}
+              viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="6" cy="6" r="6" fill="#4a90e2" />
+            </svg>
+            {`Coming Soon`}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
 };

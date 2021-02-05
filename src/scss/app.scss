@@ -1,3 +1,4 @@
+@import "~antd/dist/antd.css";
 @import "./common/bootstrap-essentials";
 @import "./common/mixins";
 @import "./common/variables";
@@ -16,9 +17,11 @@
   font-weight: 400;
 }
 .medium,
+.demiBold,
 .demi-bold {
   font-weight: 500;
 }
+.semiBold,
 .semi-bold {
   font-weight: 600;
 }
@@ -51,6 +54,7 @@ body {
   padding: 0;
   width: 100vw;
   overflow-x: hidden;
+  line-height: normal;
 }
 
 a {

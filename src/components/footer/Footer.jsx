@@ -1,9 +1,12 @@
 import React, { PureComponent } from "react";
 import { Link } from "gatsby";
 
+import { Divider } from "antd";
+
 import logo from "../../images/kloudi-footer-logo.svg";
 import twitterImg from "../../images/twitter.svg";
 import linkedinImg from "../../images/linkedin.svg";
+import githubImg from "../../images/github.svg";
 
 import style from "./footer.module.scss";
 
@@ -14,8 +17,9 @@ class Footer extends PureComponent {
       {
         heading: "Company",
         links: [
-          { text: "Book a demo", url: "https://calendly.com/sneh_ganjoo/kloudi-onboarding" },
+          { text: "Github", url: "https://github.com/kloudi-tech/" },
           { text: "Newsletter", url: "http://kloudi.substack.com/" },
+          { text: "Twitter", url: "https://twitter.com/@KloudiTech" },
         ]
       },
       // {
@@ -56,10 +60,10 @@ class Footer extends PureComponent {
           />
           <div className={style.columnWrapper}>{footerColumns}</div>
         </div>
-        <hr />
+        <Divider className={style.hr} />
         <div className={style.socialBar}>
           <div className={style.copyrightMessage}>
-            {`© 2020 Kloudi Virtual Assistant Private Ltd.`}
+            {`© 2021 Kloudi Virtual Assistant`}
           </div>
           <div className={style.copyrightMessage}>
             <Link to="/terms-of-service">{`Terms`}</Link>
@@ -75,18 +79,18 @@ class Footer extends PureComponent {
               alt="Kloudi facebook icon"
             />
           </a>*/}
-          <a href="https://twitter.com/@KloudiTech" target="_blank">
+          <a href="https://github.com/kloudi-tech/" >
+            <img
+              className={style.socialIcon}
+              src={githubImg}
+              alt="Follow Kloudi on Github"
+            />
+          </a>
+          <a href="https://twitter.com/@KloudiTech">
             <img
               className={style.socialIcon}
               src={twitterImg}
               alt="Follow Kloudi on Twitter at @KloudiTech"
-            />
-          </a>
-          <a href="https://www.linkedin.com/company/kloudi/" target="_blank">
-            <img
-              className={style.socialIcon}
-              src={linkedinImg}
-              alt="Follow Kloudi on Linked"
             />
           </a>
           {/* <a href="https://www.instagram.com/kloudi.tech/" target="_blank">

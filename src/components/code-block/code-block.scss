@@ -1,0 +1,31 @@
+@import "../../scss/common/_variables.scss";
+@import "../../scss/common/_mixins.scss";
+@import "../../scss/common/_link.scss";
+
+.code-block {
+  min-height: 48px;
+  font-size: $mobile-h6;
+  color: black;
+  background: none;
+  text-shadow: white 0px 1px;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  vertical-align: middle;
+  align-items: center;
+  white-space: pre-line;
+  word-spacing: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.auto {
+  height: 100%;
+  font-size: $default-text;
+}

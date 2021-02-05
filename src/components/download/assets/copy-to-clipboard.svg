@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>copy-to-clipboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="connect-icon" fill="#faf8f5" fill-rule="nonzero">
+            <g id="copy-to-clipboard">
+                <path d="M40.648,14 C40.085,12.822 38.89,12 37.5,12 L20.5,12 C18.57,12 17,13.57 17,15.5 L17,43.5 C17,44.988 17.938,46.254 19.25,46.759 L19.25,20.5 C19.25,16.916 22.166,14 25.75,14 L40.648,14 Z" id="Path"></path>
+                <path d="M43.5,17 L25.75,17 C23.82,17 22.25,18.57 22.25,20.5 L22.25,48.5 C22.25,50.43 23.82,52 25.75,52 L43.5,52 C45.43,52 47,50.43 47,48.5 L47,20.5 C47,18.57 45.43,17 43.5,17 Z" id="Path"></path>
+                <path d="M56.781,0 L7.218,0 C3.237,0 0,3.239 0,7.219 L0,56.781 C0,60.762 3.237,64 7.218,64 L56.781,64 C60.762,64 64,60.762 64,56.781 L64,7.218 C64,3.238 60.762,0 56.781,0 Z M50,48.5 C50,52.084 47.084,55 43.5,55 L25.75,55 C22.647,55 20.049,52.812 19.406,49.9 C16.342,49.378 14,46.711 14,43.5 L14,15.5 C14,11.916 16.916,9 20.5,9 L37.5,9 C40.572,9 43.148,11.146 43.822,14.017 C47.256,14.186 50,17.025 50,20.5 L50,48.5 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

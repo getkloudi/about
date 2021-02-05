@@ -34,25 +34,26 @@ export default class Toolbar extends PureComponent {
     }
   }
 
-  onHomeNavClick() {
-    navigate("/");
-  }
-
   render() {
+
+    const topLinksVisibility = this.props.topLinksVisibility !== undefined ? this.props.topLinksVisibility : true;
     const featuresVisibility = this.props.featuresVisibility || false;
     const signUpVisibility = this.props.signUpVisibility || false;
     const pricingVisibility = this.props.pricingVisibility;
+    console.log(topLinksVisibility, this.props.topLinksVisibility);
 
     return (
       <div className={style.toolbarWrapper}>
         <div className={style.toolbar}>
-          <img
-            alt="Goto homepage"
-            src={logoImg}
-            className={style.logo}
-            onClick={_ => this.onHomeNavClick()}
-          />
-          <div className={style.logoText}>{`KLOUDI`}</div>
+          <Link to={"/"}>
+            <img
+              alt="Goto homepage"
+              src={logoImg}
+              className={style.logo} />
+          </Link>
+          <Link to={"/"}>
+            <div className={style.logoText}>{`KLOUDI`}</div>
+          </Link>
           <div className={style.filler} />
 
           {/* <div
@@ -79,7 +80,7 @@ export default class Toolbar extends PureComponent {
 
           <div
             className={style.item}
-            style={!this.state.mobileScreen
+            style={topLinksVisibility === true && !this.state.mobileScreen
               ? { display: "inline-block" }
               : { display: "none" }
             }
@@ -89,8 +90,8 @@ export default class Toolbar extends PureComponent {
 
           <div
             className={style.item}
-            style={!this.state.mobileScreen
-              ? { display: "inline-block" }
+            style={topLinksVisibility === true && !this.state.mobileScreen
+              ? { display: "none" }
               : { display: "none" }
             }
           >
@@ -100,7 +101,7 @@ export default class Toolbar extends PureComponent {
 
           <div
             className={style.item}
-            style={!this.state.mobileScreen
+            style={topLinksVisibility === true && !this.state.mobileScreen
               ? { display: "inline-block" }
               : { display: "none" }
             }
@@ -109,7 +110,7 @@ export default class Toolbar extends PureComponent {
           </div>
 
           <Link
-            style={!this.state.mobileScreen
+            style={topLinksVisibility === true && !this.state.mobileScreen
               ? { display: "inline-block" }
               : { display: "none" }
             }
@@ -117,7 +118,7 @@ export default class Toolbar extends PureComponent {
             <PrimaryButton
               className={style.button}
               small="true">
-              Sign Up
+              Get Started
               </PrimaryButton>
           </Link>
           <img

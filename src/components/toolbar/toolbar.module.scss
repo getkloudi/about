@@ -68,27 +68,19 @@
       cursor: pointer;
       margin-left: 40px;
       font-weight: 500;
-      &:after {
-        background: $primary-gradient;
-      }
-      &:hover {
-        color: $primary-color;
-      }
+      padding: 12px 0 8px 0;
       a {
         &:hover {
-          color: $primary-color;
+          color: $link-hover-color;
         }
       }
     }
 
     .button {
       @include flex-row-center;
-      border-radius: 32px;
-      box-sizing: border-box;
+      border-radius: 16px;
       margin-left: 40px;
       margin-right: 16px;
-      background: $secondary-color;
-      border-color: $secondary-color;
     }
     .hamburger {
       box-sizing: border-box;

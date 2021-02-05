@@ -83,15 +83,6 @@
           a {
             color: $secondary-text-color;
             @include link-with-animated-border;
-            &:hover {
-              color: $primary-color;
-            }
-            &:after {
-              background: $primary-gradient;
-            }
-          }
-          &:hover {
-            color: $primary-color;
           }
         }
       }
@@ -131,11 +122,10 @@
       height: 16px;
     }
   }
-  hr {
+  .hr {
     @include clear;
     @include make-col(12);
     height: 1px;
-    background: #e4e5ec;
     background-color: #e4e5ec;
     box-shadow: 0 6px 10px 0 rgba(69, 73, 91, 0.08);
     border: 1px solid #e4e5ec;

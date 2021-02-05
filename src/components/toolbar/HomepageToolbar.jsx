@@ -34,7 +34,7 @@ export default class HomepageToolbar extends PureComponent {
   };
 
 
-  eapSignUpHref = () => (`/signup`);
+  eapSignUpHref = () => (`/get-started`);
 
   signInHref = () => {
     if (process.env.TARGET_ENV !== "production")
@@ -56,6 +56,7 @@ export default class HomepageToolbar extends PureComponent {
   }
 
   render() {
+    const topLinksVisibility = this.props.topLinksVisibility;
     const featuresVisibility = this.props.featuresVisibility;
     const signUpVisibility = this.props.signUpVisibility;
     const pricingVisibility = this.props.pricingVisibility;
@@ -68,6 +69,7 @@ export default class HomepageToolbar extends PureComponent {
           onHamburgerClicked={() => this.onToolbarHamburgerClicked()} pricingVisibility={pricingVisibility}
           signInHref={this.signInHref()}
           signUpVisibility={signUpVisibility}
+          topLinksVisibility={topLinksVisibility}
         />
         {!this.state.mobileScreen ? `` :
           <MobileSideMenu
@@ -77,6 +79,7 @@ export default class HomepageToolbar extends PureComponent {
             ref={mobileSideMenu => { this.mobileSideMenu = mobileSideMenu; }}
             signInHref={this.signInHref()}
             signUpVisibility={signUpVisibility}
+            topLinksVisibility={topLinksVisibility}
           />}
       </div>
     );

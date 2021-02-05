@@ -7,6 +7,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@sentry/browser": "^5.6.3",
+    "antd": "^4.12.0",
     "axios": "^0.18.1",
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.5",
@@ -38,6 +39,7 @@
     "querystring": "^0.2.0",
     "react": "^16.10.2",
     "react-beautiful-dnd": "^8.0.7",
+    "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^16.10.2",
     "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
@@ -58,10 +60,10 @@
   ],
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0 -p 3001",
-    "start": "gatsby build && gatsby serve -H 0.0.0.0 -p 3001",
+    "develop": "gatsby develop -H 192.168.1.10 -p 3001",
+    "start": "gatsby build && gatsby serve -H 192.168.1.10 -p 3001",
     "prod": "npm run start",
-    "serve": "gatsby serve -H 0.0.0.0 -p 3001",
+    "serve": "gatsby serve -H 192.168.1.10 -p 3001",
     "deploy": "gatsby build --staging&& rsync -a public/ ubuntu@staging.kloudi.tech:~/deploy/dist/ --delete",
     "production": "gatsby build && rm public/robots.txt && firebase deploy --token=$FIREBASE_DEPLOY_TOKEN",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
