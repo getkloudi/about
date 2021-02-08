@@ -56,7 +56,7 @@ production:
   type: deploy
   stage: production
   only:
-    - master
+    - main
   script:
     - npm install
     - export TARGET_ENV=production
