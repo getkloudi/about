@@ -15,26 +15,30 @@ class Footer extends PureComponent {
     super(props);
     this.footerContent = [
       {
+        heading: "Platform",
+        links: [
+          { text: "Mac App", url: "https://kloudi-tech/get-started/" },
+          { text: "Cloud", url: "https://app.kloudi.tech/" },
+          { text: "VSCode Extension (Alpha)", url: "https://marketplace.visualstudio.com/items?itemName=Kloudi.kloudi" }
+        ]
+      },
+      {
+        heading: "Garage",
+        links: [
+          { text: "Discord", url: "https://discord.gg/d7AmNdUgJB" },
+          { text: "Twitter", url: "https://twitter.com/@KloudiTech" },
+        ]
+      },
+      {
         heading: "Company",
         links: [
           { text: "Github", url: "https://github.com/kloudi-tech/" },
           { text: "Newsletter", url: "http://kloudi.substack.com/" },
-          { text: "Twitter", url: "https://twitter.com/@KloudiTech" },
         ]
       },
-      // {
-      //   heading: "Resources",
-      //   links: [
-      //     { text: "Newsletter", url: "http://kloudi.substack.com/" },
-      //     { text: "Blog", url: "http://blog.kloudi.tech/" }
-      //   ]
-      // },
       {
         heading: "Support",
         links: [
-          // { text: "Blog", url:"https://blog.kloudi.tech" },
-          // { text: "Careers" },
-          // { text: "FAQs" },
           { text: "Contact Us", url: "mailto:hello@kloud.team" }
         ]
       }
