@@ -97,7 +97,7 @@ export default class MobileSideMenu extends PureComponent {
                 <div
                   className={style.item}
                   style={!this.state.mobileScreen
-                    ? { display: "flex" }
+                    ? { display: "none" }
                     : { display: "none" }}
                 >
                   <Link to="/blog/why-early-access">
@@ -125,7 +125,7 @@ export default class MobileSideMenu extends PureComponent {
                 <PrimaryButton
                   className={style.buttons}
                   small="true">
-                  Get Early Access
+                  Get Started
               </PrimaryButton>
               </Link>
             </div>
