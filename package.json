@@ -2,7 +2,7 @@
   "name": "kloudi-homepage",
   "private": true,
   "description": "Kloudi Homepage",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "author": "Root <dev@kloud.team>",
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
