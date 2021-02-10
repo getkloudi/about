@@ -2,7 +2,7 @@
   "name": "kloudi-homepage",
   "private": true,
   "description": "Kloudi Homepage",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "author": "Kloudi Virtual Assistant <hello@kloudi.tech>",
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
