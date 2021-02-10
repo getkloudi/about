@@ -7,8 +7,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Kloudi - No command terminal for your daily workflows`,
-    description: `Kloudi is an NLP terminal that brings all the data and actions from your tools at one place. All of this ease without learning any command or leaving your editor.`,
+    title: `Kloudi - Universal command line for engineering tools`,
+    description: `Kloudi is a universal command line that brings all the data and actions from your tools at one place.`,
     author: `Kloudi`,
   },
   plugins: [

@@ -39,7 +39,7 @@ class Footer extends PureComponent {
       {
         heading: "Support",
         links: [
-          { text: "Contact Us", url: "mailto:hello@kloud.team" }
+          { text: "Contact Us", url: "mailto:hello@kloudi.tech" }
         ]
       }
     ];
