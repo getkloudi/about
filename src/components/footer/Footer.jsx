@@ -32,7 +32,7 @@ class Footer extends PureComponent {
       {
         heading: "Company",
         links: [
-          { text: "Github", url: "https://github.com/kloudi-tech/" },
+          { text: "Github", url: "https://github.com/getkloudi/" },
           { text: "Newsletter", url: "http://kloudi.substack.com/" },
         ]
       },
@@ -83,7 +83,7 @@ class Footer extends PureComponent {
               alt="Kloudi facebook icon"
             />
           </a>*/}
-          <a href="https://github.com/kloudi-tech/" >
+          <a href="https://github.com/getkloudi/" >
             <img
               className={style.socialIcon}
               src={githubImg}
